@@ -1,0 +1,211 @@
+.banner-area {
+	overflow: hidden;
+}
+.banner-content {
+	h1 {
+		font-size: 80px;
+		margin-bottom: 20px;
+	}
+	p {
+		font-size: 18px;
+	}
+	.book-form {
+        margin-top: 40px;
+
+		.form-group {
+			position: relative;
+			margin-bottom: 25px;
+
+			.form-control {
+				background-color: var(--whiteColor);
+			}
+			img {
+				top: 22px;
+				right: 20px;
+				font-size: 20px;
+				position: absolute;
+			}
+		}
+        .default-btn {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: {
+                top: 17px;
+                bottom: 17px;
+            };
+            i {
+                top: 50%;
+                margin-left: -25px;
+                position: absolute;
+                transform: translateY(-50%);
+            }
+        }
+	}
+}
+.banner-image {
+    z-index: 1;
+	text-align: end;
+	margin-top: 30px;
+    position: relative;
+
+	&::before {
+		top: 0;
+		left: 0;
+		right: 0;
+		content: "";
+		width: 100%;
+		z-index: -1;
+		opacity: 0.2;
+		height: 100%;
+		position: absolute;
+		filter: blur(200px);
+		mix-blend-mode: normal;
+		background: var(--primaryColor);
+	}
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+	.banner-area {
+		padding-top: 60px;
+	}
+	.banner-content {
+		h1 {
+			font-size: 32px;
+			margin-bottom: 15px;
+		}
+		p {
+			font-size: 14px;
+		}
+		.book-form {
+			margin-top: 20px;
+	
+			.form-group {
+				margin-bottom: 15px;
+	
+				img {
+					top: 16px;
+					right: 15px;
+					font-size: 15px;
+				}
+			}
+			.default-btn {
+				margin-top: 15px;
+				padding: {
+					top: 14px;
+					bottom: 14px;
+				};
+			}
+		}
+	}
+	.banner-image {
+		text-align: center;
+		margin-top: 25px;
+	}
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+	.banner-content {
+		.book-form {
+			.default-btn {
+				margin-top: 0;
+			}
+		}
+	}
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+	.banner-area {
+		padding-top: 80px;
+	}
+	.banner-content {
+		h1 {
+			font-size: 42px;
+			margin-bottom: 15px;
+		}
+		p {
+			font-size: 15px;
+		}
+		.book-form {
+			margin-top: 25px;
+	
+			.form-group {
+				margin-bottom: 20px;
+	
+				img {
+					top: 20px;
+					right: 15px;
+					font-size: 18px;
+				}
+			}
+			.default-btn {
+				padding: {
+					top: 16px;
+					bottom: 16px;
+				};
+			}
+		}
+	}
+	.banner-image {
+		text-align: center;
+		margin-top: 25px;
+	}
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+	.banner-content {
+		h1 {
+			font-size: 52px;
+			margin-bottom: 18px;
+		}
+		p {
+			font-size: 15px;
+		}
+		.book-form {
+			margin-top: 25px;
+	
+			.form-group {
+				margin-bottom: 20px;
+	
+				img {
+					top: 20px;
+				}
+			}
+		}
+	}
+	.banner-image {
+		text-align: end;
+	}
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+	.banner-content {
+		h1 {
+			font-size: 69px;
+		}
+		p {
+			font-size: 16px;
+		}
+		.book-form {
+			margin-top: 30px;
+		}
+	}
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

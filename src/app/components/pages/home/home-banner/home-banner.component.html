@@ -1,0 +1,78 @@
+<div class="banner-area">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-12">
+        <div class="banner-content">
+          <h1>Book your needs in an easy way</h1>
+          <p>
+            If you take any of our booking services here, you will get all kinds
+            of benefits from us. So take the booking facility today without
+            delay.
+          </p>
+          <form class="book-form">
+            <div class="row">
+              <div class="col-lg-12 col-sm-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your destination"
+                  />
+                  <img src="assets/images/icon/search.svg" alt="search" />
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                  <dp-date-picker
+                    theme="dp-material"
+                    placeholder="Check-in date"
+                    [config]="datePickerConfig"
+                    required="true"
+                  ></dp-date-picker>
+                  <img src="assets/images/icon/calendar.svg" alt="calendar" />
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                  <dp-date-picker
+                    theme="dp-material"
+                    placeholder="Check-out date"
+                    [config]="datePickerConfig"
+                    required="true"
+                  ></dp-date-picker>
+                  <img src="assets/images/icon/calendar.svg" alt="calendar" />
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <div class="form-group mb-0">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Guests"
+                  />
+                  <img
+                    src="assets/images/icon/user-check.svg"
+                    alt="user-check"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <div class="form-group mb-0">
+                  <button type="submit" class="default-btn">
+                    <i class="ri-search-line"></i>
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="banner-image">
+          <img src="assets/images/banner/banner-img.png" alt="banner-image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
