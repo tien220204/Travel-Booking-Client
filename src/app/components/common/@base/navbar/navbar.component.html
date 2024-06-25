@@ -17,25 +17,19 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="javascript:void(0)" class="nav-link" > Home </a>
+            <a href="javascript:void(0)" class="nav-link" routerLink="/"
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"> Home </a>
           </li>
           <li class="nav-item">
-            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link" routerLink="/hotels-listing"
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
               Hotels
             </a>
-            <ul class="dropdown-menu">
-              <li class="nav-item">
-                <a
-                  routerLink="/hotels-listing"
-                  class="nav-link"
-                  routerLinkActive="active"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                >
-                  Hotels Listing
-                </a>
-              </li>
-              
-            </ul>
+            
           </li>
           <li class="nav-item">
             <a href="javascript:void(0)" class="dropdown-toggle nav-link">
