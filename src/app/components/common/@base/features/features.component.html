@@ -1,0 +1,37 @@
+<!-- Default Features Section -->
+<div
+  class="features-area bg-color"
+  [ngClass]="{
+    'd-none': router.url === '/about' || router.url === '/cruises'
+  }"
+>
+  <div class="container">
+    <div class="features-bg bg-25283a">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-sm-6 col-md-4">
+          <div class="single-features-item">
+            <i class="flaticon-booking"></i>
+            <h3>Flexible bookings</h3>
+            <p>We are always flexible in booking any of our services</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 col-md-4">
+          <div class="single-features-item">
+            <i class="flaticon-deal"></i>
+            <h3>Incredible deals</h3>
+            <p>
+              We always give our best price considering the price line members
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 col-md-4">
+          <div class="single-features-item">
+            <i class="flaticon-call-center"></i>
+            <h3>Travel care</h3>
+            <p>We are always here for you 24 hours a day, 7 days a week</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

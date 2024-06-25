@@ -1,0 +1,440 @@
+<div class="navbar-area" [ngClass]="{ sticky: isSticky }">
+  <div class="container">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light"
+      [class.active]="classApplied"
+    >
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets/images/logo.png" alt="logo" />
+      </a>
+      <button class="navbar-toggler" type="button" (click)="toggleClass()">
+        <span class="burger-menu">
+          <span class="top-bar"></span>
+          <span class="middle-bar"></span>
+          <span class="bottom-bar"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link"> Home </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Hotels
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a
+                  routerLink="/hotels-listing"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Hotels Listing
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/hotel-details"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Hotel Details
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Flights
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a
+                  routerLink="/flights-listing"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Flights Listing
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/flight-details"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Flight Details
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a
+              routerLink="/cruises"
+              class="nav-link"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Cruises
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              routerLink="/book-now"
+              class="nav-link"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Book Now
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              routerLink="/contact"
+              class="nav-link"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Contact Us
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a
+                  routerLink="/about"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  About Us
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                  User
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a
+                      routerLink="/login"
+                      class="nav-link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                    >
+                      Login
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      routerLink="/register"
+                      class="nav-link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                    >
+                      Register
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/faq"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/privacy-policy"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/terms-conditions"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Terms & Conditions
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/not-found"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  404 Error Page
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav for-responsive">
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a
+                  routerLink="/"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  Home
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Hotels
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a
+                  routerLink="/hotels-listing"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  Hotels Listing
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/hotel-details"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  Hotel Details
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Flights
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a
+                  routerLink="/flights-listing"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  Flights Listing
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/flight-details"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  Flight Listings
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a
+              routerLink="/cruises"
+              class="nav-link"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="toggleClass()"
+            >
+              Cruises
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              routerLink="/book-now"
+              class="nav-link"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="toggleClass()"
+            >
+              Book Now
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a
+                  routerLink="/about"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  About Us
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                  Blog
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a
+                      routerLink="/blog"
+                      class="nav-link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      (click)="toggleClass()"
+                    >
+                      Blog Grid
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      routerLink="/blog-details"
+                      class="nav-link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      (click)="toggleClass()"
+                    >
+                      Blog Details
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                  User
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a
+                      routerLink="/login"
+                      class="nav-link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      (click)="toggleClass()"
+                    >
+                      Login
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      routerLink="/register"
+                      class="nav-link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      (click)="toggleClass()"
+                    >
+                      Register
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/faq"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/privacy-policy"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/terms-conditions"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  Terms & Conditions
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  routerLink="/not-found"
+                  class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  (click)="toggleClass()"
+                >
+                  404 Error Page
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a
+              routerLink="/contact"
+              class="nav-link"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="toggleClass()"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+        <div class="others-option">
+          <form class="search-box">
+            <input
+              type="text"
+              name="Search"
+              placeholder="Search"
+              class="form-control"
+            />
+            <button type="submit" class="search-btn">
+              <i class="ri-search-line"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

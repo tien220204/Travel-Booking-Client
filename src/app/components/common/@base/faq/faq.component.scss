@@ -1,0 +1,118 @@
+.faq-accordion {
+    margin-bottom: 25px;
+
+    .accordion {
+        .accordion-section {
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border: 1px solid #ebebeb;
+
+            .accordion-header {
+                display: block;
+                cursor: pointer;
+                padding: 17px 20px;
+                position: relative;
+                border-radius: 10px;
+                color: var(--blackColor);
+                background-color: var(--whiteColor);
+                font: {
+                    size: var(--fontSize);
+                    weight: 700;
+                };
+                &::before {
+                    top: 50%;
+                    right: 20px;
+                    content: "\EA4E";
+                    position: absolute;
+                    transform: translateY(-50%);
+                    font: {
+                        size: 22px;
+                        weight: normal;
+                        family: "remixicon";
+                    };
+                }
+                &.open {
+                    background-color: #ebf0f3;
+
+                    &::before {
+                        transform: translateY(-50%) rotate(180deg);
+                    }
+                }
+            }
+            .accordion-content {
+                display: none;
+                padding: 20px;
+
+                &.open {
+                    display: block;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .faq-accordion {
+        .accordion {
+            .accordion-section {
+                .accordion-header {
+                    padding: 13px 25px 13px 15px;
+                    font-size: 14px;
+
+                    &::before {
+                        right: 5px;
+                        font-size: 18px;
+                    }
+                }
+                .accordion-content {
+                    padding: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .faq-accordion {
+        .accordion {
+            .accordion-section {
+                .accordion-header {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .faq-accordion {
+        .accordion {
+            .accordion-section {
+                .accordion-header {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}
