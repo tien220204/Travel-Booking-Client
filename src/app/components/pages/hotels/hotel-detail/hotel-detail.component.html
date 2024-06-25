@@ -1,0 +1,440 @@
+<!-- Hotel Details -->
+<div class="gallery-area pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="gallery-image">
+                    <img src="assets/images/gallery/gallery-1.jpg" alt="gallerty-image">assets/images/gallery/gallery-1.jpg
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-6">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/gallery-2.jpg" alt="gallery-image">
+                        </div>
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/gallery-3.jpg" alt="gallery-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-6">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/gallery-4.jpg" alt="gallery-image">
+                        </div>
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/gallery-5.jpg" alt="gallery-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hotel-details-area pb-100">
+    <div class="container">
+        <div class="hotel-details-tabs">
+            <ul class="nav-tabset">
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab1'}">
+                    <span (click)="switchTab($event, 'tab1')">
+                        Overview
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
+                    <span (click)="switchTab($event, 'tab2')">
+                        Rooms
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
+                    <span (click)="switchTab($event, 'tab3')">
+                        Location
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab4'}">
+                    <span (click)="switchTab($event, 'tab6')">
+                        Reviews
+                    </span>
+                </li>
+            </ul>
+            <div class="tabs-container">
+                 <!-- overview -->
+                 <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
+                    <div class="overview-content">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="content">
+                                    <h3>Blue ater hotel</h3>
+                                    <p>1346 Carpenter Road North Royalton, OD 66551</p>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-half-fill"></i>
+                                    </div>
+                                    <p>4.8/5 Wonderful (543 reviews)</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="price-content">
+                                    <div class="price"><span>$250</span> (Per night)</div>
+                                    <a routerLink="/book-now" class="default-btn">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt.</p>
+                        <p>Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.</p>
+                        <div class="info">
+                            <div class="row">
+                                <div class="col-xl-8 col-lg-12 col-md-12">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <img src="assets/images/gallery/blue-atcr.jpg" alt="user">
+                                        </div>
+                                        <div class="flex-grow-1 ms-4 author">
+                                            <h3>Blue ater hotel</h3>
+                                            <span>Hotel manager</span>
+                                            <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-12 col-md-12">
+                                    <div class="facilities">
+                                        <h3>Most popular facilities</h3>
+                                        <ul>
+                                            <li>
+                                                <i class="ri-wifi-line"></i>
+                                                Free WiFi
+                                            </li>
+                                            <li>
+                                                <i class="ri-roadster-line"></i>
+                                                Free parking
+                                            </li>
+                                            <li>
+                                                <i class="ri-airplay-line"></i>
+                                                Air conditioning
+                                            </li>
+                                            <li>
+                                                <i class="ri-restaurant-2-fill"></i>
+                                                Restaurant
+                                            </li>
+                                            <li>
+                                                <i class="ri-open-arm-line"></i>
+                                                Gym
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- room -->
+                <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
+                    <div class="rooms-content">
+                        <h3>Choose your room</h3>
+                        <ul class="rooms-wrap">
+                            <li class="rooms-list">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4 col-md-6">
+                                        <img src="assets/images/rooms/room-1.jpg" alt="room-image">
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <h4>Standard Room, Double Bed</h4>
+                                        <ul>
+                                            <li><span>Floore area :</span>150 sq ft</li>
+                                            <li><span>Beds :</span>1 double</li>
+                                            <li><span>Max guest :</span>4</li>
+                                            <li><span>Max kids :</span>2</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6">
+                                        <ul class="listing">
+                                            <li>Free WiFi</li>
+                                            <li>Free breakfast</li>
+                                            <li>Free self-parking</li>
+                                            <li>Air conditioning</li>
+                                            <li>Cable TV service</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <ul class="limited">
+                                            <li>SAVE 10% TODAY!</li>
+                                            <li><h2><del>$250</del> $225</h2> (Per night)</li>
+                                            <li class="green">Limited availability</li>
+                                            <li>
+                                                <a routerLink="/book-now" class="default-btn">
+                                                    Book now
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="rooms-list">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4 col-md-6">
+                                        <img src="assets/images/rooms/room-2.jpg" alt="room-image">
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <h4>Deluxe Room, 2 Queen Beds</h4>
+                                        <ul>
+                                            <li><span>Floore area :</span>200 sq ft</li>
+                                            <li><span>Beds :</span>1 double</li>
+                                            <li><span>Max guest :</span>6</li>
+                                            <li><span>Max kids :</span>3</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6">
+                                        <ul class="listing">
+                                            <li>Free WiFi</li>
+                                            <li>Free breakfast</li>
+                                            <li>Free self-parking</li>
+                                            <li>Air conditioning</li>
+                                            <li>Cable TV service</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <ul class="limited">
+                                            <li>SAVE 10% TODAY!</li>
+                                            <li><h2><del>$300</del> $270</h2> (Per night)</li>
+                                            <li class="green">Limited availability</li>
+                                            <li>
+                                                <a routerLink="/book-now" class="default-btn">
+                                                    Book now
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="rooms-list">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4 col-md-6">
+                                        <img src="assets/images/rooms/room-3.jpg" alt="room-image">
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <h4>Luxury Room, 1 Queen Bed</h4>
+                                        <ul>
+                                            <li><span>Floore area :</span>200 sq ft</li>
+                                            <li><span>Beds :</span>1 double</li>
+                                            <li><span>Max guest :</span>2</li>
+                                            <li><span>Max kids :</span>1</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6">
+                                        <ul class="listing">
+                                            <li>Free WiFi</li>
+                                            <li>Free breakfast</li>
+                                            <li>Free self-parking</li>
+                                            <li>Air conditioning</li>
+                                            <li>Cable TV service</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <ul class="limited">
+                                            <li>SAVE 10% TODAY!</li>
+                                            <li><h2><del>$200</del> $180</h2> (Per night)</li>
+                                            <li class="red">Our last 3 rooms!</li>
+                                            <li>
+                                                <a routerLink="/book-now" class="default-btn">
+                                                    Book now
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- location -->
+                <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
+                    <div class="location-content">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.3011008712515!2d-77.01397598464975!3d38.8942292795711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7886c046a9b%3A0xb7ab83b8feebcaf4!2s357%201st%20St%20NW%204th%20Floor%2C%20Washington%2C%20DC%2020001%2C%20USA!5e0!3m2!1sen!2sbd!4v1643177332244!5m2!1sen!2sbd"></iframe>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="location-list">
+                                    <h3>Contact</h3>
+                                    <ul>
+                                        <li>9988 B N. Nut Swamp Road Collierville, TN 48812</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="location-list">
+                                    <h3>Nearby restaurants</h3>
+                                    <ul>
+                                        <li>Food Lab restaurant — 1 min walk</li>
+                                        <li>Grand  Thai & Chinese restaurant— 5 min walk</li>
+                                        <li>Zayturi  restaurant — 3 min walk</li>
+                                        <li>Santomir restaurant— 10 min walk</li>
+                                        <li>Luckno dhava restaurant — 4 min walk</li>
+                                        <li>kharancho restaurant— 5 min walk</li>
+                                        <li>Coz cizler restaurant — 7 min walk</li>
+                                        <li>Thai chi arabian restaurant— 6 min walk</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="location-list">
+                                    <h3>Nearby attractions</h3>
+                                    <ul>
+                                        <li>California's Great America—3.2 mi</li>
+                                        <li>FlyOver America —2.2 mi</li>
+                                        <li>Crayola Experience Mall of America —4.2 mi</li>
+                                        <li>Nickelodeon Universe Theme Park —3.5 mi</li>
+                                        <li>Discovery Park of America —1.2 mi</li>
+                                        <li>World's Largest Ball of Twine —5.2 mi</li>
+                                        <li>California's Great America Passenger Drop Off Area —3.2 mi</li>
+                                        <li>California's Great America—3.2 mi</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- review -->
+                <div class="pane" id="tab4" *ngIf="currentTab === 'tab6'">
+                    <div class="reviews-content">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-12">
+                                <div class="review-bar">
+                                    <h3>Reviews</h3>
+                                    <h1>4.8</h1>
+                                    <p>543 reviews</p>
+                                    <ul>
+                                        <li>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="best">Wonderful</span> <span class="persent">70%</span></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="best">Very good</span> <span class="persent">15%</span></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="best">Good</span> <span class="persent">10%</span></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span class="best">Okay</span> <span class="persent">5%</span></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span class="best">Poor</span> <span class="persent">0%</span></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <form class="review-form">
+                                    <h3>Write a review</h3>
+                                    <div class="star-rating">
+                                        <input id="star-5" type="radio" name="rating" value="star-5" />
+                                        <label for="star-5" title="5 stars">
+                                        <i class="active ri-star-fill" aria-hidden="true"></i>
+                                        </label>
+                                        <input id="star-4" type="radio" name="rating" value="star-4" />
+                                        <label for="star-4" title="4 stars">
+                                        <i class="active ri-star-fill" aria-hidden="true"></i>
+                                        </label>
+                                        <input id="star-3" type="radio" name="rating" value="star-3" />
+                                        <label for="star-3" title="3 stars">
+                                        <i class="active ri-star-fill" aria-hidden="true"></i>
+                                        </label>
+                                        <input id="star-2" type="radio" name="rating" value="star-2" />
+                                        <label for="star-2" title="2 stars">
+                                        <i class="active ri-star-fill" aria-hidden="true"></i>
+                                        </label>
+                                        <input id="star-1" type="radio" name="rating" value="star-1" />
+                                        <label for="star-1" title="1 star">
+                                        <i class="active ri-star-fill" aria-hidden="true"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Title of your review</label>
+                                        <input type="text" class="form-control" name="review" id="review">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Review text</label>
+                                        <textarea name="message" class="form-control" id="message" rows="6"></textarea>
+                                    </div>
+                                    <button class="default-btn">Submit your review</button>
+                                </form>
+                            </div>
+                            <div class="col-lg-7 col-md-12">
+                                <ul class="review-list">
+                                    <li>
+                                        <div class="rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+                                        <h4>Sandra abels</h4>
+                                        <span>Nov 25, 2024</span>
+                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
+                                    </li>
+                                    <li>
+                                        <div class="rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+                                        <h4>Rebecca collett</h4>
+                                        <span>Nov 24, 2024</span>
+                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
+                                    </li>
+                                    <li>
+                                        <div class="rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+                                        <h4>Mary johnson</h4>
+                                        <span>Nov 23, 2024</span>
+                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
+                                    </li>
+                                    <li>
+                                        <div class="rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+                                        <h4>Andrew ragland</h4>
+                                        <span>Nov 22, 2024</span>
+                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
+                                    </li>
+                                    <li>
+                                        <div class="rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+                                        <h4>Shannon luna</h4>
+                                        <span>Nov 25, 2024</span>
+                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-subscribe></app-subscribe>

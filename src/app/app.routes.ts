@@ -10,6 +10,7 @@ import { PrivacyPolicyPageComponent } from './components/pages/privacy-policy-pa
 import { TermsConditionsPageComponent } from './components/pages/terms-conditions-page/terms-conditions-page.component';
 import { HotelsComponent } from './components/common/@base/hotels/hotels.component';
 import { ListHotelsComponent } from './components/pages/hotels/list-hotels/list-hotels.component';
+import { HotelDetailComponent } from './components/pages/hotels/hotel-detail/hotel-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,5 +26,9 @@ export const routes: Routes = [
 
   // =================================
   // { path: '**', component: NotFoundComponent },
-  {path:'hotels-listing', component: ListHotelsComponent}
+  {path:'hotels-listing', component: ListHotelsComponent},
+
+  // chua co id o route
+  {path:'hotel-details', component: HotelDetailComponent},
+  
 ];
