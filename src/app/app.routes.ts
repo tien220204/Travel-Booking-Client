@@ -8,6 +8,8 @@ import { AboutPageComponent } from './components/pages/about-page/about-page.com
 import { FaqPageComponent } from './components/pages/faq-page/faq-page.component';
 import { PrivacyPolicyPageComponent } from './components/pages/privacy-policy-page/privacy-policy-page.component';
 import { TermsConditionsPageComponent } from './components/pages/terms-conditions-page/terms-conditions-page.component';
+import { HotelsComponent } from './components/common/@base/hotels/hotels.component';
+import { ListHotelsComponent } from './components/pages/hotels/list-hotels/list-hotels.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,5 +24,6 @@ export const routes: Routes = [
   { path: 'terms-conditions', component: TermsConditionsPageComponent },
 
   // =================================
-  { path: '**', component: NotFoundComponent },
+  // { path: '**', component: NotFoundComponent },
+  {path:'hotels-listing', component: ListHotelsComponent}
 ];
