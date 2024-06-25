@@ -11,6 +11,7 @@ import { TermsConditionsPageComponent } from './components/pages/terms-condition
 import { HotelsComponent } from './components/common/@base/hotels/hotels.component';
 import { ListHotelsComponent } from './components/pages/hotels/list-hotels/list-hotels.component';
 import { HotelDetailComponent } from './components/pages/hotels/hotel-detail/hotel-detail.component';
+import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,5 +31,6 @@ export const routes: Routes = [
 
   // chua co id o route
   {path:'hotel-details', component: HotelDetailComponent},
+  {path:'booking-page', component: BookingPageComponent},
   
 ];
