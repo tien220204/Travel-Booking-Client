@@ -12,6 +12,8 @@ import { HotelsComponent } from './components/common/@base/hotels/hotels.compone
 import { ListHotelsComponent } from './components/pages/hotels/list-hotels/list-hotels.component';
 import { HotelDetailComponent } from './components/pages/hotels/hotel-detail/hotel-detail.component';
 import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
+import { FlightDetailComponent } from './components/pages/flight/flight-detail/flight-detail.component';
+import { ListFlightsComponent } from './components/pages/flight/list-flights/list-flights.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,9 +30,11 @@ export const routes: Routes = [
   // =================================
   // { path: '**', component: NotFoundComponent },
   {path:'hotels-listing', component: ListHotelsComponent},
-
+  {path:'booking-page', component: BookingPageComponent},
+  {path:'flights-listing', component: ListFlightsComponent},
   // chua co id o route
   {path:'hotel-details', component: HotelDetailComponent},
-  {path:'booking-page', component: BookingPageComponent},
+  {path:'flight-details', component: FlightDetailComponent},
+  
   
 ];

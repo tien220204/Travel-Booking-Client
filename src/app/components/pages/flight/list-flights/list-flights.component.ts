@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-
-import { BookingBarComponent } from '../../../common/@base/booking-bar/booking-bar.component';
 import { SubscribeComponent } from '../../../common/@base/subscribe/subscribe.component';
+import { BookingBarComponent } from '../../../common/@base/booking-bar/booking-bar.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-list-hotels',
+  selector: 'app-list-flights',
   standalone: true,
   imports: [
     SubscribeComponent,
     BookingBarComponent,
     RouterLink
   ],
-  templateUrl: './list-hotels.component.html',
-  styleUrl: './list-hotels.component.scss'
+  templateUrl: './list-flights.component.html',
+  styleUrl: './list-flights.component.scss',
+  host: { 'collision-id': 'ListFlightsComponent'}
 })
-export class ListHotelsComponent implements OnInit  {
+export class ListFlightsComponent implements OnInit {
   constructor(){}
   ngOnInit(): void {
     

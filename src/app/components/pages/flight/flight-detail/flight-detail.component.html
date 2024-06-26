@@ -1,28 +1,29 @@
-<!-- Hotel Details -->
+<app-booking-bar></app-booking-bar>
+<!-- Flights Details -->
 <div class="gallery-area pt-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="gallery-image">
-                    <img src="assets/images/gallery/gallery-1.jpg" alt="gallerty-image">
+                    <img src="assets/images/gallery/gallery-6.jpg" alt="gallery-image">
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="row">
                     <div class="col-lg-6 col-sm-6 col-6">
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-2.jpg" alt="gallery-image">
+                            <img src="assets/images/gallery/gallery-7.jpg" alt="gallery-image">
                         </div>
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-3.jpg" alt="gallery-image">
+                            <img src="assets/images/gallery/gallery-8.jpg" alt="gallery-image">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-6">
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-4.jpg" alt="gallery-image">
+                            <img src="assets/images/gallery/gallery-9.jpg" alt="gallery-image">
                         </div>
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-5.jpg" alt="gallery-image">
+                            <img src="assets/images/gallery/gallery-10.jpg" alt="gallery-image">
                         </div>
                     </div>
                 </div>
@@ -30,9 +31,9 @@
         </div>
     </div>
 </div>
-<div class="hotel-details-area pb-100">
+<div class="flights-details-area pb-100">
     <div class="container">
-        <div class="hotel-details-tabs">
+        <div class="flights-details-tabs">
             <ul class="nav-tabset">
                 <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab1'}">
                     <span (click)="switchTab($event, 'tab1')">
@@ -41,42 +42,36 @@
                 </li>
                 <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
                     <span (click)="switchTab($event, 'tab2')">
-                        Rooms
+                        Amenities
                     </span>
                 </li>
                 <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
                     <span (click)="switchTab($event, 'tab3')">
-                        Location
+                        Policies
                     </span>
                 </li>
                 <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab4'}">
-                    <span (click)="switchTab($event, 'tab6')">
+                    <span (click)="switchTab($event, 'tab4')">
                         Reviews
                     </span>
                 </li>
             </ul>
             <div class="tabs-container">
-                 <!-- overview -->
-                 <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
+                <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
                     <div class="overview-content">
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="content">
-                                    <h3>Blue ater hotel</h3>
-                                    <p>1346 Carpenter Road North Royalton, OD 66551</p>
-                                    <div class="rating">
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-half-fill"></i>
-                                    </div>
-                                    <p>4.8/5 Wonderful (543 reviews)</p>
+                                    <h3>New York (NYC), USA</h3>
+                                    <p>Atlanta (ATL) to Brisbane (BNE)</p>
+                                    <p>1 Feb – 5 Feb • 5 days</p>
+                                    <p>Call our travel expert: <a href="tel:+1 719-504-1984">+1 719-504-1984</a></p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="price-content">
-                                    <div class="price"><span>$250</span> (Per night)</div>
+                                    <div class="price"><span>$250</span> (Per person)</div>
+                                    <p>Economy</p>
                                     <a routerLink="/book-now" class="default-btn">Book Now</a>
                                 </div>
                             </div>
@@ -91,8 +86,8 @@
                                             <img src="assets/images/gallery/blue-atcr.jpg" alt="user">
                                         </div>
                                         <div class="flex-grow-1 ms-4 author">
-                                            <h3>Blue ater hotel</h3>
-                                            <span>Hotel manager</span>
+                                            <h3>Jason Roy</h3>
+                                            <span>Flight manager</span>
                                             <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed.</p>
                                         </div>
                                     </div>
@@ -106,20 +101,16 @@
                                                 Free WiFi
                                             </li>
                                             <li>
-                                                <i class="ri-roadster-line"></i>
-                                                Free parking
-                                            </li>
-                                            <li>
                                                 <i class="ri-airplay-line"></i>
                                                 Air conditioning
                                             </li>
                                             <li>
                                                 <i class="ri-restaurant-2-fill"></i>
-                                                Restaurant
+                                                Cable TV service
                                             </li>
                                             <li>
                                                 <i class="ri-open-arm-line"></i>
-                                                Gym
+                                                Free breakfast
                                             </li>
                                         </ul>
                                     </div>
@@ -128,173 +119,142 @@
                         </div>
                     </div>
                 </div>
-                <!-- room -->
                 <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
-                    <div class="rooms-content">
-                        <h3>Choose your room</h3>
-                        <ul class="rooms-wrap">
-                            <li class="rooms-list">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <img src="assets/images/rooms/room-1.jpg" alt="room-image">
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <h4>Standard Room, Double Bed</h4>
-                                        <ul>
-                                            <li><span>Floore area :</span>150 sq ft</li>
-                                            <li><span>Beds :</span>1 double</li>
-                                            <li><span>Max guest :</span>4</li>
-                                            <li><span>Max kids :</span>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <ul class="listing">
-                                            <li>Free WiFi</li>
-                                            <li>Free breakfast</li>
-                                            <li>Free self-parking</li>
-                                            <li>Air conditioning</li>
-                                            <li>Cable TV service</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <ul class="limited">
-                                            <li>SAVE 10% TODAY!</li>
-                                            <li><h2><del>$250</del> $225</h2> (Per night)</li>
-                                            <li class="green">Limited availability</li>
-                                            <li>
-                                                <a routerLink="/book-now" class="default-btn">
-                                                    Book now
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="rooms-list">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <img src="assets/images/rooms/room-2.jpg" alt="room-image">
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <h4>Deluxe Room, 2 Queen Beds</h4>
-                                        <ul>
-                                            <li><span>Floore area :</span>200 sq ft</li>
-                                            <li><span>Beds :</span>1 double</li>
-                                            <li><span>Max guest :</span>6</li>
-                                            <li><span>Max kids :</span>3</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <ul class="listing">
-                                            <li>Free WiFi</li>
-                                            <li>Free breakfast</li>
-                                            <li>Free self-parking</li>
-                                            <li>Air conditioning</li>
-                                            <li>Cable TV service</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <ul class="limited">
-                                            <li>SAVE 10% TODAY!</li>
-                                            <li><h2><del>$300</del> $270</h2> (Per night)</li>
-                                            <li class="green">Limited availability</li>
-                                            <li>
-                                                <a routerLink="/book-now" class="default-btn">
-                                                    Book now
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="rooms-list">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <img src="assets/images/rooms/room-3.jpg" alt="room-image">
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <h4>Luxury Room, 1 Queen Bed</h4>
-                                        <ul>
-                                            <li><span>Floore area :</span>200 sq ft</li>
-                                            <li><span>Beds :</span>1 double</li>
-                                            <li><span>Max guest :</span>2</li>
-                                            <li><span>Max kids :</span>1</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <ul class="listing">
-                                            <li>Free WiFi</li>
-                                            <li>Free breakfast</li>
-                                            <li>Free self-parking</li>
-                                            <li>Air conditioning</li>
-                                            <li>Cable TV service</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <ul class="limited">
-                                            <li>SAVE 10% TODAY!</li>
-                                            <li><h2><del>$200</del> $180</h2> (Per night)</li>
-                                            <li class="red">Our last 3 rooms!</li>
-                                            <li>
-                                                <a routerLink="/book-now" class="default-btn">
-                                                    Book now
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- location -->
-                <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
-                    <div class="location-content">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.3011008712515!2d-77.01397598464975!3d38.8942292795711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7886c046a9b%3A0xb7ab83b8feebcaf4!2s357%201st%20St%20NW%204th%20Floor%2C%20Washington%2C%20DC%2020001%2C%20USA!5e0!3m2!1sen!2sbd!4v1643177332244!5m2!1sen!2sbd"></iframe>
+                    <div class="amenities-content">
+                        <h3>Amenities</h3>
                         <div class="row">
                             <div class="col-lg-4 col-md-6">
-                                <div class="location-list">
-                                    <h3>Contact</h3>
-                                    <ul>
-                                        <li>9988 B N. Nut Swamp Road Collierville, TN 48812</li>
-                                    </ul>
+                                <div class="single-amenities">
+                                    <h4><i class="ri-wifi-line"></i> Free WiFi</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <div class="location-list">
-                                    <h3>Nearby restaurants</h3>
-                                    <ul>
-                                        <li>Food Lab restaurant — 1 min walk</li>
-                                        <li>Grand  Thai & Chinese restaurant— 5 min walk</li>
-                                        <li>Zayturi  restaurant — 3 min walk</li>
-                                        <li>Santomir restaurant— 10 min walk</li>
-                                        <li>Luckno dhava restaurant — 4 min walk</li>
-                                        <li>kharancho restaurant— 5 min walk</li>
-                                        <li>Coz cizler restaurant — 7 min walk</li>
-                                        <li>Thai chi arabian restaurant— 6 min walk</li>
-                                    </ul>
+                                <div class="single-amenities">
+                                    <h4><i class="ri-airplay-line"></i> Air conditioning</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <div class="location-list">
-                                    <h3>Nearby attractions</h3>
-                                    <ul>
-                                        <li>California's Great America—3.2 mi</li>
-                                        <li>FlyOver America —2.2 mi</li>
-                                        <li>Crayola Experience Mall of America —4.2 mi</li>
-                                        <li>Nickelodeon Universe Theme Park —3.5 mi</li>
-                                        <li>Discovery Park of America —1.2 mi</li>
-                                        <li>World's Largest Ball of Twine —5.2 mi</li>
-                                        <li>California's Great America Passenger Drop Off Area —3.2 mi</li>
-                                        <li>California's Great America—3.2 mi</li>
-                                    </ul>
+                                <div class="single-amenities">
+                                    <h4><i class="ri-restaurant-2-line"></i> Restaurant</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-walk-fill"></i>Gym</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-hotel-line"></i>Outdoor pool</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-text-spacing"></i> Spa</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-body-scan-line"></i> Guest services</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-barcode-box-line"></i> Bar</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-hotel-line"></i> Room service</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-cup-line"></i> Coffee machine</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-qq-line"></i> Coffee shop</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-wifi-line"></i> Coffee shop</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-group-line"></i>Family friendly</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-wheelchair-line"></i> Accessibility</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-amenities">
+                                    <h4><i class="ri-indent-decrease"></i> More</h4>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- review -->
-                <div class="pane" id="tab4" *ngIf="currentTab === 'tab6'">
+                <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
+                    <div class="policies-content">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single-policies">
+                                    <h3>Check-in</h3>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single-policies">
+                                    <h3>Check-out</h3>
+                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-policies">
+                            <h3>Special check-in instructions</h3>
+                            <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt</p>
+                        </div>
+                        <div class="single-policies">
+                            <h3>Access methods</h3>
+                            <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt</p>
+                        </div>
+                        <div class="single-policies">
+                            <h3>Children and extra beds</h3>
+                            <ul>
+                                <li>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam</li>
+                                <li>vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget </li>
+                                <li>consectetur sed, convallis at tellus. </li>
+                            </ul>
+                        </div>
+                        <div class="single-policies">
+                            <h3>Cancellation Policy</h3>
+                            <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pane" id="tab4" *ngIf="currentTab === 'tab4'">
                     <div class="reviews-content">
                         <div class="row">
                             <div class="col-lg-5 col-md-12">

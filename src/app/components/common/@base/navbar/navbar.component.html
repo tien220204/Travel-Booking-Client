@@ -32,10 +32,13 @@
             
           </li>
           <li class="nav-item">
-            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link"  routerLink="/flights-listing"
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
               Flights
             </a>
-            <ul class="dropdown-menu">
+            <!-- <ul class="dropdown-menu">
               <li class="nav-item">
                 <a
                   routerLink="/flights-listing"
@@ -56,7 +59,7 @@
                   Flight Details
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </li>
           <li class="nav-item">
             <a
