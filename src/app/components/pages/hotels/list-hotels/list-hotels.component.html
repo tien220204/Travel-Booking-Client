@@ -515,591 +515,66 @@
                         </li>
                     </ul>
                     <ul class="hotels-list">
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing1.jpg" alt="listing-image" >
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a >
-                                                Blue ater hotel
-                                            </a>
-                                        </h3>
-                                        <p>1346 Carpenter Road North Royalton, OD 66551</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
+                        
+                        
+                        @for (item of listHotelDto?.result; track $index) {
+                            <li class="single-hotel-box">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-xl-5 col-lg-12 col-sm-12">
+                                        <a routerLink="/hotel-details" class="d-block">
+                                            <img src="{{item.photoUrl}}" alt="listing-image">
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-sm-7">
+                                        <div class="content">
+                                            <h3>
+                                                <a routerLink="/hotel-details">
+                                                    {{item.hotelName}} 
+                                                </a>
+                                            </h3>
+                                            <p>{{item.hotelLocation}}</p>
+                                            <div class="rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-half-fill"></i>
+                                            </div>
+                                            <p>4.8/5 Wibderful (143 reviews)</p>
+                                            <div class="price">{{item.hotelPriceRange}} <span>(Per night)</span></div>
+                                            <a routerLink="/book-now" class="default-btn">Book now</a>
                                         </div>
-                                        <p>4.8/5 Wonderful (543 reviews)</p>
-                                        <div class="price">$250 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-sm-5">
+                                        <ul class="info">
+                                            <li>
+                                                <i class="ri-wifi-line"></i>
+                                                Free WiFi
+                                            </li>
+                                            <li>
+                                                <i class="ri-roadster-line"></i>
+                                                Free parking
+                                            </li>
+                                            <li>
+                                                <i class="ri-wheelchair-line"></i>
+                                                Air conditioning
+                                            </li>
+                                            <li>
+                                                <i class="ri-restaurant-2-line"></i>
+                                                Restaurant
+                                            </li>
+                                            <li>
+                                                <i class="ri-riding-line"></i>
+                                                Gym
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing2.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                Hotel karton
-                                            </a>
-                                        </h3>
-                                        <p>6345 North Ridgeview Ave. Saint Albans, HS 114444</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.8/5 Wonderful (751reviews)</p>
-                                        <div class="price">$225 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing3.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                Teboo hotel
-                                            </a>
-                                        </h3>
-                                        <p>9537 Ann Road Hopkins, GL 55333</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.2/5 Very Good (258 reviews)</p>
-                                        <div class="price">$200 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing4.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                The zero hotel
-                                            </a>
-                                        </h3>
-                                        <p>3574 Beech Street Clover, SC 22555</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.8/5 Wonderful (1,543 reviews)</p>
-                                        <div class="price">$250 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing5.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                Six jumeir hotel
-                                            </a>
-                                        </h3>
-                                        <p>7002 Airport St. Canfield, OH 44433</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.8/5 Wibderful (143 reviews)</p>
-                                        <div class="price">$299 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing6.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                The skyton hotel
-                                            </a>
-                                        </h3>
-                                        <p>703 Bay Avenue Valley Stream, NY 11580</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.3/5 Very Good (253 reviews)</p>
-                                        <div class="price">$199 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing7.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                Hotel albella towers
-                                            </a>
-                                        </h3>
-                                        <p>3325 Second Dr. Oceanside, MN 99977</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.4/5 Very Good (243 reviews)</p>
-                                        <div class="price">$175 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing8.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                Hotel forlando animo
-                                            </a>
-                                        </h3>
-                                        <p>8855 Cooper Street Willoughby, OH 22663</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.3/5 Very Good (357 reviews)</p>
-                                        <div class="price">$200 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing9.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                Hotel peluu towers
-                                            </a>
-                                        </h3>
-                                        <p>7896 Lancaster Ave. Long Branch, KK 022033</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.8/5 Wonderful (369 reviews)</p>
-                                        <div class="price">$255 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing10.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                Hotel rojonut
-                                            </a>
-                                        </h3>
-                                        <p>4563 Jackson Ave. Canton, GA 665544</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.8/5 Very Good (543 reviews)</p>
-                                        <div class="price">$150 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-hotel-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-5 col-lg-12 col-sm-12">
-                                    <a routerLink="/hotel-details" class="d-block">
-                                        <img src="assets/images/listings/listing11.jpg" alt="listing-image">
-                                    </a>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/hotel-details">
-                                                Hotel peyasu
-                                            </a>
-                                        </h3>
-                                        <p>998 Oakland Ave. Jeffersonville, IN 445566</p>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </div>
-                                        <p>4.8/5 Very Good (458 reviews)</p>
-                                        <div class="price">$255 <span>(Per night)</span></div>
-                                        <a routerLink="/book-now" class="default-btn">Book now</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <i class="ri-wifi-line"></i>
-                                            Free WiFi
-                                        </li>
-                                        <li>
-                                            <i class="ri-roadster-line"></i>
-                                            Free parking
-                                        </li>
-                                        <li>
-                                            <i class="ri-wheelchair-line"></i>
-                                            Air conditioning
-                                        </li>
-                                        <li>
-                                            <i class="ri-restaurant-2-line"></i>
-                                            Restaurant
-                                        </li>
-                                        <li>
-                                            <i class="ri-riding-line"></i>
-                                            Gym
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        }
                     </ul>
-                    <div class="pagination-area">
+                    <!--
+                        <div class="pagination-area">
                         <a routerLink="/hotels-listing" class="next page-numbers">
                             <i class="ri-arrow-left-line"></i>
                         </a>
@@ -1109,6 +584,27 @@
                         <a routerLink="/hotels-listing" class="next page-numbers">
                             <i class="ri-arrow-right-line"></i>
                         </a>
+                        </div>
+                    -->
+                    
+                    <div class="pagination-area">
+                        <a (click)="onPageChange(page - 1)" class="prev page-numbers">
+                            <i class="ri-arrow-left-line"></i>
+                          </a>
+
+                       
+                        @for (item of getPages(); track $index) {
+                            @if (item==page) {
+                                <a (click)="onPageChange(item)" class="page-numbers current">{{item}}</a>
+                            }@else {
+                                <a (click)="onPageChange(item)" class="page-numbers">{{item}}</a>
+                            }
+                            
+                        }
+
+                        <a (click)="onPageChange(page + 1)" class="next page-numbers">
+                            <i class="ri-arrow-right-line"></i>
+                          </a>
                     </div>
                 </div>
             </div>
