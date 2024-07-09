@@ -30,26 +30,28 @@ export class LoginPageComponent implements OnInit {
   }
   login() {
     let account: LoginDTO = this.loginForm.value as LoginDTO;
-   console.log(account);
-     this.accountApiService.login(account).then(
-      (res)=>{
+    console.log(account);
 
-        let result : JsonResponseDTO = res as JsonResponseDTO;
+    this.accountApiService.login(account).then(
+      (res) => {
+        let result: JsonResponseDTO = res as JsonResponseDTO;
         console.log(result.code);
-        if (result.code == 200) {
+        if (result.code === 200) {
           localStorage.setItem('username', account.email);
-          
           this.router.navigate(['transfer']);
-         
           alert(result.msg);
-        }
+        } 
       }
-      // }, err => {
-        
-      //   let result : JsonResponseDTO = err as JsonResponseDTO;
-      //   console.log(result.msg);
-      // }
-      
-     );
+    ).catch((err) => {
+      // Xử lý lỗi ở đây
+      console.error(err);
+      if (err.error) {
+        let result: JsonResponseDTO = err.error as JsonResponseDTO;
+        console.log(result.msg);
+        alert(result.msg);
+      } else {
+        alert('An unexpected error occurred.');
+      }
+    });
   }
 }
