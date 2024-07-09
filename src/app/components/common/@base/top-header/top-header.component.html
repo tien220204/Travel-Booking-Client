@@ -13,12 +13,27 @@
       </div>
       <div class="col-lg-6 col-sm-6">
         <ul class="top-header-right-content">
-          <li>
-            <a [routerLink]="['/login']">Login</a>
-          </li>
-          <li>
-            <a [routerLink]="['/register']">Register</a>
-          </li>
+          
+
+          @if(isLoggedIn){
+            @if(fullName!=''){
+              <li>Welcome {{fullName}}</li>
+            }@else {
+              <li>Welcome</li>
+            }
+            
+            <li>
+              <a (click)="logout()" style="text-decoration: none">Log Out</a>
+            </li>
+          }@else{
+            <li>
+              <a [routerLink]="['/login']">Login</a>
+            </li>
+  
+            <li>
+              <a [routerLink]="['/register']">Register</a>
+            </li>
+          }
         </ul>
       </div>
     </div>

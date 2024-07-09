@@ -28,4 +28,9 @@ export class AccountAPIService {
     );
   }
   
+  async getFullName(email: string) {
+    return lastValueFrom(
+      this.httpClient.get(this.baseUrl + '/getFullName/'+email)
+    );
+  }
 }

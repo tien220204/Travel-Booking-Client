@@ -36,9 +36,11 @@ export class LoginPageComponent implements OnInit {
       (res) => {
         let result: JsonResponseDTO = res as JsonResponseDTO;
         console.log(result.code);
-        if (result.code === 200) {
-          localStorage.setItem('username', account.email);
-          this.router.navigate(['transfer']);
+        console.log(result);
+        if (result.code == 200) {
+          localStorage.setItem('token', result.token);
+          localStorage.setItem('email', account.email);
+          window.location.href = 'http://localhost:4200';
           alert(result.msg);
         } 
       }

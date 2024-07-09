@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NgClass } from '@angular/common';
+import { AuthService } from '../../../../services/Auth.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -10,9 +11,15 @@ import { NgClass } from '@angular/common';
   host: { 'collision-id': 'NavbarComponent' },
 })
 export class NavbarComponent implements OnInit {
-  constructor(public router: Router) {}
+  //check login
+  isLoggedIn: boolean = false;
+  constructor(public router: Router,
+    public authService : AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoggedIn = this.authService.checkIsLogin();
+    
+  }
 
   classApplied = false;
   toggleClass() {
@@ -33,5 +40,8 @@ export class NavbarComponent implements OnInit {
     } else {
       this.isSticky = false;
     }
+  }
+  logout() {
+    this.authService.logOut();
   }
 }
