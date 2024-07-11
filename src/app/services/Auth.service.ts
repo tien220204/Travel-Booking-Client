@@ -8,8 +8,10 @@ export class AuthService {
   constructor() { }
 
   checkIsLogin(): boolean {
-    const token = localStorage.getItem('token');
-    return !!token;
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      return localStorage.getItem('token') !== null;
+    }
+    return false;
   }
   logOut(){
     localStorage.removeItem('token');

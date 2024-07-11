@@ -23,20 +23,25 @@ export class TopHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.checkIsLogin();
-    const storedEmail = localStorage.getItem('email');
-    this.email = storedEmail ? storedEmail : '';
-    if(this.isLoggedIn){
-      this.accountApiService.getFullName(this.email).then(
-        (res) => {
-          this.fullName = (res as { result: string }).result;
+    let storedEmail : string | null = null;
+  if (typeof localStorage !== 'undefined') {
+    storedEmail = localStorage.getItem('email');
+  }
 
-        }, 
-        err => {
-          console.log(err);
-        }
-      )
-    }
-    console.log(this.isLoggedIn);
+  this.email = storedEmail ? storedEmail : '';
+  
+  if (this.isLoggedIn) {
+    this.accountApiService.getFullName(this.email).then(
+      (res) => {
+        this.fullName = (res as { result: string }).result;
+      }, 
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  console.log(this.isLoggedIn);
   }
 
   logout() {

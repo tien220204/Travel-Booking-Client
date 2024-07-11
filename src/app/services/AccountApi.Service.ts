@@ -6,17 +6,18 @@ import { lastValueFrom } from 'rxjs';
 import { enviroment } from '../Enviroments/Enviroment';
 
 import { LoginDTO } from '../DTO/LoginDto.DTO';
+import { RegisterDTO } from '../DTO/registerDTO.dto';
 @Injectable({
   providedIn: 'root',
 })
 export class AccountAPIService {
   httpClient = inject(HttpClient);
   baseUrl = enviroment.baseApiUrl + 'Account';
-  // async register(account: AccountDTO) {
-  //   return lastValueFrom(
-  //     this.httpClient.post(this.baseUrl + '/Register', account)
-  //   );
-  // }
+  async register(account: RegisterDTO) {
+    return lastValueFrom(
+      this.httpClient.post(this.baseUrl + '/Register', account)
+    );
+  }
   async login(account: LoginDTO) {
     return lastValueFrom(
       this.httpClient.post(this.baseUrl + '/Login', account)
