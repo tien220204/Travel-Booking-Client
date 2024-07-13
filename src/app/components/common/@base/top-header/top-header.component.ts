@@ -12,36 +12,36 @@ import { AccountAPIService } from '../../../../services/AccountApi.Service';
   host: { 'collision-id': 'TopHeaderComponent' },
 })
 export class TopHeaderComponent implements OnInit {
-   //check login
+  //check login
   isLoggedIn: boolean = false;
   fullName: string = '';
   email: string = '';
   constructor(public router: Router,
-    public authService : AuthService,
+    public authService: AuthService,
     private accountApiService: AccountAPIService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.checkIsLogin();
-    let storedEmail : string | null = null;
-  if (typeof localStorage !== 'undefined') {
-    storedEmail = localStorage.getItem('email');
-  }
+    let storedEmail: string | null = null;
+    if (typeof localStorage !== 'undefined') {
+      storedEmail = localStorage.getItem('email');
+    }
 
-  this.email = storedEmail ? storedEmail : '';
-  
-  if (this.isLoggedIn) {
-    this.accountApiService.getFullName(this.email).then(
-      (res) => {
-        this.fullName = (res as { result: string }).result;
-      }, 
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
+    this.email = storedEmail ? storedEmail : '';
 
-  console.log(this.isLoggedIn);
+    if (this.isLoggedIn) {
+      this.accountApiService.getFullName(this.email).then(
+        (res) => {
+          this.fullName = (res as { result: string }).result;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
+    
+    console.log(this.isLoggedIn);
   }
 
   logout() {

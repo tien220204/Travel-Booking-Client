@@ -14,9 +14,13 @@ import { HotelDetailComponent } from './components/pages/hotels/hotel-detail/hot
 import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
 import { FlightDetailComponent } from './components/pages/flight/flight-detail/flight-detail.component';
 import { ListFlightsComponent } from './components/pages/flight/list-flights/list-flights.component';
+
 import { ResetPasswordComponent } from './components/pages/auth/reset-password/reset-password.component';
 import { ConfirmSuccessComponent } from './components/pages/auth/confirm-success/confirm-success.component';
 import { ForgetPasswordComponent } from './components/pages/auth/forget-password/forget-password.component';
+
+import { ActiveComponent } from './components/common/@base/active-account/active.component';
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,6 +46,8 @@ export const routes: Routes = [
   // chua co id o route
   {path:'hotel-details', component: HotelDetailComponent},
   {path:'flight-details', component: FlightDetailComponent},
+
+  { path: 'Verify-Your-Account/:token', component: ActiveComponent }
   
   
 ];
