@@ -34,4 +34,10 @@ export class AccountAPIService {
       this.httpClient.get(this.baseUrl + '/getFullName/'+email)
     );
   }
+
+  async activeAccount(token :string) {
+    return lastValueFrom(
+      this.httpClient.post(this.baseUrl + '/Verify-Your-Account/'+token, {})
+    );
+  }
 }

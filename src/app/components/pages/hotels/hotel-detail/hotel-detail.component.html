@@ -1,28 +1,32 @@
 <!-- Hotel Details -->
+@if (hotelDetails!=null) {
 <div class="gallery-area pt-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="gallery-image">
-                    <img src="assets/images/gallery/gallery-1.jpg" alt="gallerty-image">
+                   
+                        <img src="{{hotelDetails.photos[0]?.photoUrl != null ? hotelDetails.photos[3].photoUrl : '' }}" alt="gallerty-image">
+                    
+                    
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="row">
                     <div class="col-lg-6 col-sm-6 col-6">
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-2.jpg" alt="gallery-image">
+                            <img src="{{hotelDetails.photos[1]?.photoUrl != null ? hotelDetails.photos[3].photoUrl : '' }}">
                         </div>
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-3.jpg" alt="gallery-image">
+                            <img src="{{hotelDetails.photos[2]?.photoUrl != null ? hotelDetails.photos[3].photoUrl : '' }}" >
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-6">
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-4.jpg" alt="gallery-image">
+                            <img src="{{hotelDetails.photos[3]?.photoUrl != null ? hotelDetails.photos[3].photoUrl : '' }}" >
                         </div>
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-5.jpg" alt="gallery-image">
+                            <img src="{{hotelDetails.photos[4]?.photoUrl != null ? hotelDetails.photos[3].photoUrl : '' }}" >
                         </div>
                     </div>
                 </div>
@@ -44,11 +48,7 @@
                         Rooms
                     </span>
                 </li>
-                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
-                    <span (click)="switchTab($event, 'tab3')">
-                        Location
-                    </span>
-                </li>
+                
                 <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab4'}">
                     <span (click)="switchTab($event, 'tab6')">
                         Reviews
@@ -62,70 +62,27 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="content">
-                                    <h3>Blue ater hotel</h3>
-                                    <p>1346 Carpenter Road North Royalton, OD 66551</p>
+                                    <h3>{{hotelDetails.hotel.hotelName}}</h3>
+                                    <p>{{hotelDetails.hotel.hotelLocation}}</p>
                                     <div class="rating">
                                         <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-half-fill"></i>
+                                        {{hotelDetails.star}}/5 ({{hotelDetails.count}} reviews)
                                     </div>
-                                    <p>4.8/5 Wonderful (543 reviews)</p>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="price-content">
-                                    <div class="price"><span>$250</span> (Per night)</div>
+                                    <div class="price"><span>{{hotelDetails.hotel.hotelPriceRange}}</span> VND(Per night)</div>
                                     <a routerLink="/book-now" class="default-btn">Book Now</a>
+                                    
                                 </div>
                             </div>
                         </div>
-                        <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt.</p>
-                        <p>Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.</p>
-                        <div class="info">
-                            <div class="row">
-                                <div class="col-xl-8 col-lg-12 col-md-12">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0">
-                                            <img src="assets/images/gallery/blue-atcr.jpg" alt="user">
-                                        </div>
-                                        <div class="flex-grow-1 ms-4 author">
-                                            <h3>Blue ater hotel</h3>
-                                            <span>Hotel manager</span>
-                                            <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-12 col-md-12">
-                                    <div class="facilities">
-                                        <h3>Most popular facilities</h3>
-                                        <ul>
-                                            <li>
-                                                <i class="ri-wifi-line"></i>
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <i class="ri-roadster-line"></i>
-                                                Free parking
-                                            </li>
-                                            <li>
-                                                <i class="ri-airplay-line"></i>
-                                                Air conditioning
-                                            </li>
-                                            <li>
-                                                <i class="ri-restaurant-2-fill"></i>
-                                                Restaurant
-                                            </li>
-                                            <li>
-                                                <i class="ri-open-arm-line"></i>
-                                                Gym
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!--description-->
+                        <p>description : {{hotelDetails.hotel.hotelDescription}}</p>
+                        <p></p>
+                        
                     </div>
                 </div>
                 <!-- room -->
@@ -248,51 +205,7 @@
                     </div>
                 </div>
                 <!-- location -->
-                <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
-                    <div class="location-content">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.3011008712515!2d-77.01397598464975!3d38.8942292795711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7886c046a9b%3A0xb7ab83b8feebcaf4!2s357%201st%20St%20NW%204th%20Floor%2C%20Washington%2C%20DC%2020001%2C%20USA!5e0!3m2!1sen!2sbd!4v1643177332244!5m2!1sen!2sbd"></iframe>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="location-list">
-                                    <h3>Contact</h3>
-                                    <ul>
-                                        <li>9988 B N. Nut Swamp Road Collierville, TN 48812</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="location-list">
-                                    <h3>Nearby restaurants</h3>
-                                    <ul>
-                                        <li>Food Lab restaurant — 1 min walk</li>
-                                        <li>Grand  Thai & Chinese restaurant— 5 min walk</li>
-                                        <li>Zayturi  restaurant — 3 min walk</li>
-                                        <li>Santomir restaurant— 10 min walk</li>
-                                        <li>Luckno dhava restaurant — 4 min walk</li>
-                                        <li>kharancho restaurant— 5 min walk</li>
-                                        <li>Coz cizler restaurant — 7 min walk</li>
-                                        <li>Thai chi arabian restaurant— 6 min walk</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="location-list">
-                                    <h3>Nearby attractions</h3>
-                                    <ul>
-                                        <li>California's Great America—3.2 mi</li>
-                                        <li>FlyOver America —2.2 mi</li>
-                                        <li>Crayola Experience Mall of America —4.2 mi</li>
-                                        <li>Nickelodeon Universe Theme Park —3.5 mi</li>
-                                        <li>Discovery Park of America —1.2 mi</li>
-                                        <li>World's Largest Ball of Twine —5.2 mi</li>
-                                        <li>California's Great America Passenger Drop Off Area —3.2 mi</li>
-                                        <li>California's Great America—3.2 mi</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- review -->
                 <div class="pane" id="tab4" *ngIf="currentTab === 'tab6'">
                     <div class="reviews-content">
@@ -300,32 +213,32 @@
                             <div class="col-lg-5 col-md-12">
                                 <div class="review-bar">
                                     <h3>Reviews</h3>
-                                    <h1>4.8</h1>
-                                    <p>543 reviews</p>
+                                    <h1>{{hotelDetails.star}}</h1>
+                                    <p>{{hotelDetails.count}} reviews</p>
                                     <ul>
                                         <li>
                                             <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="best">Wonderful</span> <span class="persent">70%</span></div>
+                                                <div class="progress-bar" role="progressbar" [style.width.%]="reviewCounts.get(5)" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="best">Wonderful</span> <span class="persent">{{ reviewCounts.get(5) }}%</span></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="best">Very good</span> <span class="persent">15%</span></div>
+                                                <div class="progress-bar" role="progressbar" [style.width.%]="reviewCounts.get(4)" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="best">Very good</span> <span class="persent">{{ reviewCounts.get(4) }}%</span></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="best">Good</span> <span class="persent">10%</span></div>
+                                                <div class="progress-bar" role="progressbar" [style.width.%]="reviewCounts.get(3)" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="best">Good</span> <span class="persent">{{ reviewCounts.get(3) }}%</span></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span class="best">Okay</span> <span class="persent">5%</span></div>
+                                                <div class="progress-bar" role="progressbar" [style.width.%]="reviewCounts.get(2)" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span class="best">Okay</span> <span class="persent">{{ reviewCounts.get(2) }}%</span></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span class="best">Poor</span> <span class="persent">0%</span></div>
+                                                <div class="progress-bar" role="progressbar" [style.width.%]="reviewCounts.get(1)" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span class="best">Poor</span> <span class="persent">{{ reviewCounts.get(1) }}%</span></div>
                                             </div>
                                         </li>
                                     </ul>
@@ -367,66 +280,18 @@
                             </div>
                             <div class="col-lg-7 col-md-12">
                                 <ul class="review-list">
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Sandra abels</h4>
-                                        <span>Nov 25, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Rebecca collett</h4>
-                                        <span>Nov 24, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Mary johnson</h4>
-                                        <span>Nov 23, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Andrew ragland</h4>
-                                        <span>Nov 22, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Shannon luna</h4>
-                                        <span>Nov 25, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
+                                    
+                                    @for (review of hotelDetails.listReview; track $index) {
+                                        <li>
+                                            <div class="rating">
+                                                <i *ngFor="let star of [].constructor(review.reviewStar)" class="ri-star-fill"></i>
+                                                
+                                              </div>
+                                            <h4>{{review.userFullName}}</h4>
+
+                                            <p>{{review.reviewText}}</p>
+                                        </li>
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -436,5 +301,5 @@
         </div>
     </div>
 </div>
-
+}
 <app-subscribe></app-subscribe>

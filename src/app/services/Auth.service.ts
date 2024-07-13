@@ -9,9 +9,13 @@ export class AuthService {
 
   checkIsLogin(): boolean {
     if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      console.log("??");
       return localStorage.getItem('token') !== null;
     }
+    console.log("!!")
     return false;
+    // const token = localStorage.getItem('token');
+    // return !!token;
   }
   logOut(){
     localStorage.removeItem('token');

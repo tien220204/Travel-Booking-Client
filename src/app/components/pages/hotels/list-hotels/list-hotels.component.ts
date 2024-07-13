@@ -21,6 +21,7 @@ export class ListHotelsComponent implements OnInit  {
   page: number = 1;
   pageSize: number = 8;
   totalPages: number = 0;
+  totalItems: number = 0;
   listHotelDto : listHotelDto | null = null;
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +45,7 @@ export class ListHotelsComponent implements OnInit  {
         this.listHotelDto = res as listHotelDto;
         console.log(this.listHotelDto);
         this.totalPages = this.listHotelDto.totalPages;
+        this.totalItems = this.listHotelDto.totalItem;
       }, 
       err => {
         console.log(err);
