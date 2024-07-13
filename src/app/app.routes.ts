@@ -14,12 +14,19 @@ import { HotelDetailComponent } from './components/pages/hotels/hotel-detail/hot
 import { BookingPageComponent } from './components/pages/booking-page/booking-page.component';
 import { FlightDetailComponent } from './components/pages/flight/flight-detail/flight-detail.component';
 import { ListFlightsComponent } from './components/pages/flight/list-flights/list-flights.component';
+import { ResetPasswordComponent } from './components/pages/auth/reset-password/reset-password.component';
+import { ConfirmSuccessComponent } from './components/pages/auth/confirm-success/confirm-success.component';
+import { ForgetPasswordComponent } from './components/pages/auth/forget-password/forget-password.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   // auth
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
+  { path: 'reset-password/:token', component: ResetPasswordComponent },
+  { path: 'forget-password', component: ForgetPasswordComponent },
+  { path: 'confirm-success', component: ConfirmSuccessComponent },
+
   //auth
   { path: 'contact', component: ContactPageComponent },
   { path: 'about', component: AboutPageComponent },
