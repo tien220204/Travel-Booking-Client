@@ -4,17 +4,19 @@ import { RegisterDTO } from '../../../../DTO/registerDTO.dto';
 import { Router } from '@angular/router';
 import { AccountAPIService } from '../../../../services/AccountApi.Service';
 import { JsonResponseDTO } from '../../../../DTO/JsonResponeDTO.DTO';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register-page',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.scss'],
   host: { 'collision-id': 'RegisterPageComponent' },
 })
 export class RegisterPageComponent implements OnInit {
   registerForm!: FormGroup;
+  loading = false;
   constructor(
     private formBuilder: FormBuilder,
     private accountApiService: AccountAPIService,
@@ -31,6 +33,7 @@ export class RegisterPageComponent implements OnInit {
     });
   }
   register() {
+    this.loading = true;
     let account: RegisterDTO = this.registerForm.value as RegisterDTO;
     console.log(account)
     
@@ -41,8 +44,9 @@ export class RegisterPageComponent implements OnInit {
         console.log(result.code);
         console.log(result);
         if (result.code == 200) {
-          alert(result.msg);
+          this.router.navigate(["/confirm-success"], { state: { message: result.msg } });
         } 
+        this.loading = false; 
       }
     ).catch((err) => {
       // Xử lý lỗi ở đây
@@ -54,6 +58,7 @@ export class RegisterPageComponent implements OnInit {
       } else {
         alert('An unexpected error occurred.');
       }
+      this.loading = false; 
     });
 }
 }

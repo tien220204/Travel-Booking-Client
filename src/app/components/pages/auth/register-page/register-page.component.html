@@ -11,6 +11,15 @@
     </div>
 </div>
 
+<!-- loading panel -->
+<div *ngIf="loading" class="loading-overlay">
+    <!-- <div class="loading-spinner"></div> -->
+    <div class="lds-ripple"><div></div><div></div></div>
+    <div class="loading-message">
+      Please wait...
+    </div>
+  </div>
+
 <!-- Register -->
 <div class="register-area ptb-100">
     <div class="container">

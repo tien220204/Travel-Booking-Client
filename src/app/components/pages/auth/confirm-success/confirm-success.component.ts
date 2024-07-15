@@ -9,7 +9,11 @@ import { Router } from '@angular/router';
   styleUrl: './confirm-success.component.scss'
 })
 export class ConfirmSuccessComponent {
-  constructor(private router: Router) {}
+  message:string | undefined
+  constructor(private router: Router) {
+    const navigation = this.router.getCurrentNavigation();
+    this.message = navigation?.extras.state?.['message'];
+  }
 
   navigateToLogin() {
     this.router.navigate(['/login']); // Điều hướng về trang đăng nhập sau khi xác nhận
