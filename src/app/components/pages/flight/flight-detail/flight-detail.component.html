@@ -40,11 +40,7 @@
                         Overview
                     </span>
                 </li>
-                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
-                    <span (click)="switchTab($event, 'tab2')">
-                        Amenities
-                    </span>
-                </li>
+                
                 <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
                     <span (click)="switchTab($event, 'tab3')">
                         Policies
@@ -119,103 +115,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
-                    <div class="amenities-content">
-                        <h3>Amenities</h3>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-wifi-line"></i> Free WiFi</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-airplay-line"></i> Air conditioning</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-restaurant-2-line"></i> Restaurant</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-walk-fill"></i>Gym</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-hotel-line"></i>Outdoor pool</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-text-spacing"></i> Spa</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-body-scan-line"></i> Guest services</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-barcode-box-line"></i> Bar</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-hotel-line"></i> Room service</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-cup-line"></i> Coffee machine</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-qq-line"></i> Coffee shop</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-wifi-line"></i> Coffee shop</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-group-line"></i>Family friendly</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-wheelchair-line"></i> Accessibility</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-indent-decrease"></i> More</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
                     <div class="policies-content">
                         <div class="row">

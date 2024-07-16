@@ -22,6 +22,7 @@ import { ForgetPasswordComponent } from './components/pages/auth/forget-password
 import { ActiveComponent } from './components/common/@base/active-account/active.component';
 
 
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   // auth
@@ -47,7 +48,6 @@ export const routes: Routes = [
   {path:'hotel-details', component: HotelDetailComponent},
   {path:'flight-details', component: FlightDetailComponent},
 
-  { path: 'Verify-Your-Account/:token', component: ActiveComponent }
-  
+  { path: 'Verify-Your-Account/:securityCode', component: ActiveComponent },
   
 ];

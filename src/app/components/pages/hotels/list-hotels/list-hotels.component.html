@@ -539,13 +539,10 @@
                                                 </h3>
                                                 <p>{{item.hotelLocation}}</p>
                                                 <div class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <i class="ri-star-fill"></i>
-                                                    <i class="ri-star-fill"></i>
-                                                    <i class="ri-star-fill"></i>
-                                                    <i class="ri-star-half-fill"></i>
+                                                    {{item.star}}/5 <i class="ri-star-fill"></i> ({{item.countReview}} reviews)
+                                                    
                                                 </div>
-                                                <p>4.8/5 Wibderful (143 reviews)</p>
+                                                <p></p>
                                                 <div class="price">{{item.hotelPriceRange}} VND/Night <span></span></div>
                                                 <a routerLink="/book-now" class="default-btn">Book now</a>
                                             </div>

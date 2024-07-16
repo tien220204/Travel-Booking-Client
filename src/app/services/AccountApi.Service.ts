@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
-import { lastValueFrom } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 
 import { enviroment } from '../Enviroments/Enviroment';
 
@@ -14,6 +14,9 @@ import { EmailDTO } from '../DTO/EmailDto.DTO';
 export class AccountAPIService {
   httpClient = inject(HttpClient);
   baseUrl = enviroment.baseApiUrl + 'Account';
+
+  constructor(private http: HttpClient) { }
+
   async register(account: RegisterDTO) {
     return lastValueFrom(
       this.httpClient.post(this.baseUrl + '/Register', account)
@@ -57,4 +60,11 @@ export class AccountAPIService {
     );
 
   }
+
+  verifyAccount(securityCode: string): Observable<any> {
+    return this.http.post<any>(this.baseUrl + '/Verify-Your-Account/'+securityCode, {});
+  }
+
+  
+  
 }

@@ -23,6 +23,15 @@ export class ListHotelsComponent implements OnInit  {
   totalPages: number = 0;
   totalItems: number = 0;
   listHotelDto : listHotelDto | null = null;
+  
+  filter: any = {
+    name: '',
+    minPrice: null,
+    maxPrice: null,
+    minRating: null,
+    maxRating: null
+  };
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
