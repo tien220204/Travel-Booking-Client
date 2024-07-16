@@ -61,19 +61,11 @@ export class AccountAPIService {
     );
 
   }
-<<<<<<< HEAD
 
-  verifyAccount(securityCode: string): Observable<any> {
-    return this.http.post<any>(this.baseUrl + '/Verify-Your-Account/'+securityCode, {});
-  }
-
-  
-  
-=======
   async resetPassword (password: resetPasswordDTO) {
     return lastValueFrom(
       this.httpClient.post(this.baseUrl + '/ResetPassword', password)
     );
   }
->>>>>>> d14e63ca838bf81eccf6010694bf1c1aa4248191
+
 }

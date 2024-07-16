@@ -1,431 +1,86 @@
 <app-booking-bar></app-booking-bar>
-<div class="flights-area ptb-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-12">
-                <div class="left-sidebar">
-                    <div class="single-widget">
-                        <h3>Search here</h3>
-                        <form>
-                            <input type="text" class="form-control" placeholder="Search">
-                            <button type="submit" class="src-btn"><i class="ri-search-line"></i></button>
-                        </form>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- result site -->
-            <div class="col-lg-9 col-md-12">
-                <div class="flights-listing">
-                    <ul class="d-flex justify-content-between sorting">
-                        <li>
-                            <span>15,935 flights</span>
-                        </li>
-                        <li>
-                            <select class="form-select">
-                                <option selected>Sorted by default</option>
-                                <option value="1">Price: high to low</option>
-                                <option value="2">Price: low to high</option>
-                            </select>
-                        </li>
-                    </ul>
-                    <ul class="flights-list">
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-1.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                Atlanta (ATL) to  Brisbane (BNE)
-                                            </a>
-                                        </h3>
-                                        <p></p>   
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$200</div>
-                                        </li>
-                                        <li>
-                                            Economy
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-2.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                Sydney (SYD), Australia
-                                            </a>
-                                        </h3>
-                                        <p>Sydney (SYD) to  Dubai (DXB)</p> 
-                                        <p>1 Apr – 3 Feb • 3 days </p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$232</div>
-                                        </li>
-                                        <li>
-                                            Classic
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-3.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                Queenstown (ZQN)
-                                            </a>
-                                        </h3>
-                                        <p>Queenstown (ZQN) to Panama City (PTY)</p>
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$999</div>
-                                        </li>
-                                        <li>
-                                            Business
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-4.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                London heathrow(LHR)
-                                            </a>
-                                        </h3>
-                                        <p>London Heathrow(LHR)  San Francisco (SFO)</p>
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$898</div>
-                                        </li>
-                                        <li>
-                                            Advance
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-5.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                Manchester (MAN)
-                                            </a>
-                                        </h3>
-                                        <p>Manchester(MAN)  Montreal (YMQ)</p>
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$400</div>
-                                        </li>
-                                        <li>
-                                            Economy
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-6.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                New York (NYC), USA
-                                            </a>
-                                        </h3>
-                                        <p>Atlanta (ATL) to  Brisbane (BNE)</p>
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$320</div>
-                                        </li>
-                                        <li>
-                                            Classic
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-7.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                New York (NYC), USA
-                                            </a>
-                                        </h3>
-                                        <p>Atlanta (ATL) to  Brisbane (BNE)</p>
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$150</div>
-                                        </li>
-                                        <li>
-                                            Business
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-8.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                Glasgow (GLA)
-                                            </a>
-                                        </h3>
-                                        <p>Atlanta (ATL) to  Brisbane (BNE)</p>
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$400</div>
-                                        </li>
-                                        <li>
-                                            Advance
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-9.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                Edinburgh (EDI)
-                                            </a>
-                                        </h3>
-                                        <p>Edinburgh(EDI)  Montreal (YMQ)</p>
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$250</div>
-                                        </li>
-                                        <li>
-                                            Economy
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="single-flights-box">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-lg-5 col-md-12 col-sm-12">
-                                    <a routerLink="/flight-details" class="d-block">
-                                        <img src="assets/images/flights/flights-10.jpg" alt="flights-image">
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-sm-7">
-                                    <div class="content">
-                                        <h3>
-                                            <a routerLink="/flight-details">
-                                                New York (NYC), USA
-                                            </a>
-                                        </h3>
-                                        <p>Atlanta (ATL) to  Brisbane (BNE)</p>
-                                        <p>1 Feb – 5 Feb • 5 days</p>
-                                        <p>Call our travel expert</p>
-                                        <a href="tel:+1-719-504-1984" class="number">+1 719-504-1984</a>
-                                        <span class="days">24 hours a day/7 days a week</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <ul class="info">
-                                        <li>
-                                            <div class="price">$300</div>
-                                        </li>
-                                        <li>
-                                            Classic
-                                        </li>
-                                        <li>
-                                            <a routerLink="/book-now" class="default-btn">
-                                                Book Now
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="pagination-area">
-                        <a routerLink="/hotels-listing" class="next page-numbers">
-                            <i class="ri-arrow-left-line"></i>
-                        </a>
-                        <span class="page-numbers current" aria-current="page">1</span>
-                        <a routerLink="/hotels-listing" class="page-numbers">2</a>
-                        <a routerLink="/hotels-listing" class="page-numbers">3</a>
-                        <a routerLink="/hotels-listing" class="next page-numbers">
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
+
+    <div class="flights-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="left-sidebar">
+                        <div class="single-widget">
+                            <h3>Search here</h3>
+                            <form>
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button type="submit" class="src-btn"><i class="ri-search-line"></i></button>
+                            </form>
+                        </div>
+                        
                     </div>
                 </div>
+                @if (flights.length!==0) {
+                <!-- result site -->
+                <div class="col-lg-9 col-md-12">
+                    <div class="flights-listing">
+                        <ul class="d-flex justify-content-between sorting">
+                            <li>
+                                <span>{{flights.length}} flights</span>
+                            </li>
+                            <li>
+                                <select class="form-select">
+                                    <option selected>Sorted by default</option>
+                                    <option value="1">Price: high to low</option>
+                                    <option value="2">Price: low to high</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <ul class="flights-list">
+                            
+                            @for (item of flights; track $index) {
+                                <li class="single-flights-box">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <a routerLink="/flight-details" class="d-block">
+                                                <img src="https://res.cloudinary.com/dhee9ysz4/image/upload/v1721110315/evykvvdq9ozs3nkdb4po.png" alt="flights-image">
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-md-7 col-sm-7">
+                                            <div class="content">
+                                                <h3>
+                                                    <a routerLink="/flight-details">
+    
+                                                        {{item.nameFlight}}
+                                                    </a>
+                                                </h3>
+                                                <p></p>   
+                                                <p>Start Date: {{item.startDate}}</p>
+                                                <p>Departure Time : {{item.departureTime}}</p>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-5 col-sm-5">
+                                            <ul class="info">
+                                                <li>
+                                                    <div class="price">{{ item.flightPrice | number:'1.0-0' }} VND</div>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a routerLink="/book-now" class="default-btn">
+                                                        Book Now
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                        
+                    </div>
+                </div>
+                }
             </div>
         </div>
     </div>
-</div>
+
+
 
 <app-subscribe></app-subscribe>
