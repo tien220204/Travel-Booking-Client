@@ -42,7 +42,8 @@ export const routes: Routes = [
   // =================================
   // { path: '**', component: NotFoundComponent },
   {path:'hotels-listing', component: ListHotelsComponent},
-  {path:'booking-page', component: BookingPageComponent},
+  //booking hotel
+  {path:'booking-hotel', component: BookingPageComponent},
   {path:'flights-listing', component: ListFlightsComponent},
   // chua co id o route
   {path:'hotel-details', component: HotelDetailComponent},

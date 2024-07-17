@@ -1,85 +1,126 @@
 <app-booking-bar></app-booking-bar>
 
-    <div class="flights-area ptb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-12">
-                    <div class="left-sidebar">
-                        <div class="single-widget">
-                            <h3>Search here</h3>
-                            <form>
-                                <input type="text" class="form-control" placeholder="Search">
-                                <button type="submit" class="src-btn"><i class="ri-search-line"></i></button>
-                            </form>
-                        </div>
-                        
-                    </div>
-                </div>
-                @if (flights.length!==0) {
-                <!-- result site -->
-                <div class="col-lg-9 col-md-12">
-                    <div class="flights-listing">
-                        <ul class="d-flex justify-content-between sorting">
-                            <li>
-                                <span>{{flights.length}} flights</span>
-                            </li>
-                            <li>
-                                <select class="form-select">
-                                    <option selected>Sorted by default</option>
-                                    <option value="1">Price: high to low</option>
-                                    <option value="2">Price: low to high</option>
-                                </select>
-                            </li>
-                        </ul>
-                        <ul class="flights-list">
-                            
-                            @for (item of flights; track $index) {
-                                <li class="single-flights-box">
-                                    <div class="row align-items-center justify-content-center">
-                                        <div class="col-lg-5 col-md-12 col-sm-12">
-                                            <a routerLink="/flight-details" class="d-block">
-                                                <img src="https://res.cloudinary.com/dhee9ysz4/image/upload/v1721110315/evykvvdq9ozs3nkdb4po.png" alt="flights-image">
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4 col-md-7 col-sm-7">
-                                            <div class="content">
-                                                <h3>
-                                                    <a routerLink="/flight-details">
-    
-                                                        {{item.nameFlight}}
-                                                    </a>
-                                                </h3>
-                                                <p></p>   
-                                                <p>Start Date: {{item.startDate}}</p>
-                                                <p>Departure Time : {{item.departureTime}}</p>
-                                                
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-5 col-sm-5">
-                                            <ul class="info">
-                                                <li>
-                                                    <div class="price">{{ item.flightPrice | number:'1.0-0' }} VND</div>
-                                                </li>
-                                                
-                                                <li>
-                                                    <a routerLink="/book-now" class="default-btn">
-                                                        Book Now
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
+<div class="flights-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                <div class="left-sidebar">
+                    <div class="single-widget">
+                        <h3>Search here</h3>
+                        <form (ngSubmit)="onSubmit()">
+                            @if (airports !== null) {
+                            <label for="from">From:</label>
+                            <select id="from" class="form-control" [(ngModel)]="airportFromId"
+                                [ngModelOptions]="{standalone: true}">
+                                <option value="" disabled selected>Select Departure Airport</option>
+                                @for (airport of airports; track $index) {
+                                <option value="{{airport.airportId}}">{{airport.airportName}} ({{airport.airportId}})
+                                </option>
+                                }
+                            </select>
+
+                            <label for="to">To:</label>
+                            <select id="to" class="form-control" [(ngModel)]="airportToId"
+                                [ngModelOptions]="{standalone: true}">
+                                <option value="" disabled selected>Select Arrival Airport</option>
+                                @for (airport of airports; track $index) {
+                                <option value="{{airport.airportId}}">{{airport.airportName}} ({{airport.airportId}})
+                                </option>
+                                }
+
+                            </select>
                             }
-                        </ul>
-                        
+                            <br>
+                            
+                            <div >
+                                    <label>Departure Date</label>
+                                    
+                                    <dp-date-picker [(ngModel)]="date"
+                                    [ngModelOptions]="{standalone: true}" class="form-control"  theme="dp-material" placeholder="Add dates" [config]="datePickerConfig" required="true">
+                                    <img src="assets/images/icon/calendar.svg" alt="calendar"  >
+                                    </dp-date-picker>
+                                    
+                                    
+                                    
+                                </div>
+                            
+                            <button type="submit" class="default-btn" style="width: 100%;"><i
+                                    class="ri-search-line"></i></button>
+                        </form>
                     </div>
+
                 </div>
-                }
             </div>
+            @if (flights.length!==0) {
+            <!-- result site -->
+            <div class="col-lg-9 col-md-12">
+                <div class="flights-listing">
+                    <ul class="d-flex justify-content-between sorting">
+                        <li>
+                            <span>{{flights.length}} flights</span>
+                        </li>
+                        <li>
+                            <select class="form-select" [(ngModel)]="price"
+                            [ngModelOptions]="{standalone: true}">
+                                <option selected value="">Sorted by default</option>
+                                <option value="hightolow">Price: high to low</option>
+                                <option value="lowtohigh">Price: low to high</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="flights-list">
+
+                        @for (item of flights; track $index) {
+                        <li class="single-flights-box">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-5 col-md-12 col-sm-12">
+                                    <a routerLink="/flight-details" [queryParams]="{flightId: item.flightId}"
+                                        class="d-block">
+                                        <img src="https://res.cloudinary.com/dhee9ysz4/image/upload/v1721110315/evykvvdq9ozs3nkdb4po.png"
+                                            alt="flights-image">
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-7 col-sm-7">
+                                    <div class="content">
+                                        <h3>
+                                            <a style="text-decoration: none;" routerLink="/flight-details"
+                                                [queryParams]="{flightId: item.flightId}">
+
+                                                {{item.nameFlight}}
+                                            </a>
+                                        </h3>
+                                        <p></p>
+                                        <p>Start Date: {{item.startDate}}</p>
+                                        <p>Departure Time : {{item.departureTime}}</p>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-5 col-sm-5">
+                                    <ul class="info">
+                                        <li>
+                                            <div class="price">{{ item.flightPrice | number:'1.0-0' }} VND</div>
+                                        </li>
+
+                                        <li>
+                                            <a routerLink="/flight-details" [queryParams]="{flightId: item.flightId}"
+                                                class="default-btn">
+                                                Book Now
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+            }
         </div>
     </div>
+</div>
 
 
 

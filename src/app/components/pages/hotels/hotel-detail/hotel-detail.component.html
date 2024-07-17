@@ -74,7 +74,7 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="price-content">
                                     <div class="price"><span>{{hotelDetails.hotel.hotelPriceRange}}</span> VND(Per night)</div>
-                                    <a routerLink="/book-now" class="default-btn">Book Now</a>
+                                    <a (click)="switchTab($event, 'tab2')"  class="default-btn">Book Now</a>
                                     
                                 </div>
                             </div>
@@ -90,117 +90,50 @@
                     <div class="rooms-content">
                         <h3>Choose your room</h3>
                         <ul class="rooms-wrap">
-                            <li class="rooms-list">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <img src="assets/images/rooms/room-1.jpg" alt="room-image">
+                            @for (item of hotelDetails.rooms; track $index) {
+                                <li class="rooms-list">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-4 col-md-6">
+                                            <img src="{{item.photoUrl}}" alt="room-image">
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <h3>{{item.roomName}}</h3>
+                                            <ul>
+                                                
+                                                <li><span>Single Bed :</span>{{item.numOfSingleBed}}</li>
+                                                <li><span>Double Bed :</span>{{item.numOfDoubleBed}}</li>
+                                                <li><span>Max guest :</span>{{item.maxPerInRoom}}</li>
+                                                
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <ul class="listing">
+                                                <li>Free WiFi</li>
+                                                <li>Free breakfast</li>
+                                                <li>Free self-parking</li>
+                                                <li>Air conditioning</li>
+                                                <li>Cable TV service</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <ul class="limited">
+                                                
+                                                <li><h2> {{item.roomPrice | number:'1.0-0'}} VND</h2> (Per night)</li>
+                                                
+                                                <li>
+                                                    <a routerLink="/booking-hotel"
+                                                    [queryParams]="{hotelId: hotelDetails.hotel.hotelId , roomId: item.roomId}" 
+                                                     class="default-btn">
+                                                        Book now
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <h4>Standard Room, Double Bed</h4>
-                                        <ul>
-                                            <li><span>Floore area :</span>150 sq ft</li>
-                                            <li><span>Beds :</span>1 double</li>
-                                            <li><span>Max guest :</span>4</li>
-                                            <li><span>Max kids :</span>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <ul class="listing">
-                                            <li>Free WiFi</li>
-                                            <li>Free breakfast</li>
-                                            <li>Free self-parking</li>
-                                            <li>Air conditioning</li>
-                                            <li>Cable TV service</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <ul class="limited">
-                                            <li>SAVE 10% TODAY!</li>
-                                            <li><h2><del>$250</del> $225</h2> (Per night)</li>
-                                            <li class="green">Limited availability</li>
-                                            <li>
-                                                <a routerLink="/book-now" class="default-btn">
-                                                    Book now
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="rooms-list">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <img src="assets/images/rooms/room-2.jpg" alt="room-image">
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <h4>Deluxe Room, 2 Queen Beds</h4>
-                                        <ul>
-                                            <li><span>Floore area :</span>200 sq ft</li>
-                                            <li><span>Beds :</span>1 double</li>
-                                            <li><span>Max guest :</span>6</li>
-                                            <li><span>Max kids :</span>3</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <ul class="listing">
-                                            <li>Free WiFi</li>
-                                            <li>Free breakfast</li>
-                                            <li>Free self-parking</li>
-                                            <li>Air conditioning</li>
-                                            <li>Cable TV service</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <ul class="limited">
-                                            <li>SAVE 10% TODAY!</li>
-                                            <li><h2><del>$300</del> $270</h2> (Per night)</li>
-                                            <li class="green">Limited availability</li>
-                                            <li>
-                                                <a routerLink="/book-now" class="default-btn">
-                                                    Book now
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="rooms-list">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <img src="assets/images/rooms/room-3.jpg" alt="room-image">
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <h4>Luxury Room, 1 Queen Bed</h4>
-                                        <ul>
-                                            <li><span>Floore area :</span>200 sq ft</li>
-                                            <li><span>Beds :</span>1 double</li>
-                                            <li><span>Max guest :</span>2</li>
-                                            <li><span>Max kids :</span>1</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6">
-                                        <ul class="listing">
-                                            <li>Free WiFi</li>
-                                            <li>Free breakfast</li>
-                                            <li>Free self-parking</li>
-                                            <li>Air conditioning</li>
-                                            <li>Cable TV service</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                        <ul class="limited">
-                                            <li>SAVE 10% TODAY!</li>
-                                            <li><h2><del>$200</del> $180</h2> (Per night)</li>
-                                            <li class="red">Our last 3 rooms!</li>
-                                            <li>
-                                                <a routerLink="/book-now" class="default-btn">
-                                                    Book now
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            }
+                            
+                            
                         </ul>
                     </div>
                 </div>
