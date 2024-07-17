@@ -9,6 +9,7 @@ import { JsonResponseDTO } from '../../../../DTO/JsonResponeDTO.DTO';
   standalone: true,
   imports: [NgClass, RouterLink, RouterLinkActive],
   templateUrl: './active.component.html',
+  styleUrls: ['./active-account.scss'],
   host: { 'collision-id': 'TopHeaderComponent' },
 })
 export class ActiveComponent implements OnInit {
@@ -42,7 +43,10 @@ export class ActiveComponent implements OnInit {
   }
 
   navigateToLogin() {
-    this.router.navigate(['/login']); // Điều hướng về trang đăng nhập sau khi xác nhận
+    const confirmed = window.confirm('Nếu thoát, tài khoản sẽ không được kích hoạt. Bạn có chắc chắn muốn thoát không?');
+    if (confirmed) {
+      this.router.navigate(['/login']); // Điều hướng về trang đăng nhập sau khi xác nhận
+    } // Điều hướng về trang đăng nhập sau khi xác nhận
   }
   register(){
     this.route.paramMap.subscribe(params => {

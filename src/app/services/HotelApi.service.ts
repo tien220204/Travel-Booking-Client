@@ -24,7 +24,7 @@ export class HotelApiService {
       this.httpClient.get(this.baseUrl + '/HotelsPaginated',{ params: httpParams })
     );
   }
-
+  
   async getHotelDetail(id : string) {
     return lastValueFrom(
       this.httpClient.get(this.baseUrl + '/Hotel-Details/'+id)
