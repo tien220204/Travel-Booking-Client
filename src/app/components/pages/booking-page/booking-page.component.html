@@ -1,4 +1,4 @@
-<app-booking-bar></app-booking-bar>
+
 
 <div class="book-now-area ptb-100">
     <div class="container">
@@ -9,7 +9,7 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>Check In</label>
-                                <dp-date-picker  class="form-control" theme="dp-material" placeholder="Date in" [config]="datePickerConfig" required="true"></dp-date-picker>
+                                <dp-date-picker [(ngModel)]="checkIn"  class="form-control" theme="dp-material" placeholder="Date in" [config]="datePickerConfig" required="true"></dp-date-picker>
                                 
                             </div>
                             
@@ -17,63 +17,74 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>Check Out</label>
-                                <dp-date-picker class="form-control" theme="dp-material" placeholder="Date out" [config]="datePickerConfig" required="true"></dp-date-picker>
+                                <dp-date-picker [(ngModel)]="checkOut" class="form-control" theme="dp-material" placeholder="Date out" [config]="datePickerConfig" required="true"></dp-date-picker>
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>Number Of Adult</label>
-                                <input type="number" class="form-control">
+                                <input type="number" [(ngModel)]="numOfAdult" class="form-control">
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>Number Of Children</label>
-                                <input type="number" class="form-control">
+                                <input type="number" [(ngModel)]="numOfChil" class="form-control">
                             </div>
                         </div>
-                        
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Discount Code (optional)</label>
+                                <input type="text" class="form-control" [(ngModel)]="discountCode">
+                                
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
                 
                 <div class="book-now-content pay-info">
                 </div>
                 <div class="book-now-content">
-                    <h3>Book Now To Get Your Bill</h3>
+                    <h3>Book Now To Get Your Order</h3>
                     
-                    <button class="default-btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</button>
+                    <button class="default-btn" type="button" (click)="bookNow()">Book Now</button>
                 </div>
                 <!--hidden-->
-                <div class="book-now-content">
-                    <h3>Your Informetion</h3>
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="form-group">
-                                <label>Fullname</label>
-                                <input type="text" class="form-control" value="Fullname" readonly>
+                <div class="book-now-content" [hidden]="isHidden">
+                    <h3>Your Information</h3>
+                    @if (userInfo!==null) {
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="form-group">
+                                    <label>Fullname</label>
+                                    <input type="text" class="form-control" value="{{userInfo.fullname}}" readonly>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" value="{{userInfo.email}}" readonly>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" class="form-control" value="{{userInfo.phoneNumber}}" readonly>
+                                    
+                                </div>
                                 
                             </div>
                             
-                        </div>
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control" value="Email" readonly>
-                                
-                            </div>
+                            
                             
                         </div>
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="text" class="form-control" value="Phone Number" readonly>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                        
-                    </div>
+                    }
+                    
                     <div class="row">
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
@@ -90,67 +101,71 @@
                                         <th scope="col">Room Price</th>
                                       </tr>
                                     </thead>
-                                    <tbody>
-                                      <tr class="right-align">
-                                        <th scope="row">Hotel name 1</th>
-                                        <td>Room name 1</td>
-                                        <td>15/08/2004</td>
-                                        <td>16/08/2004</td>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                        <td>600000</td>
-                                      </tr>
-                                      <tr class="right-align">
-                                        <th colspan="6"></th>
-                                        <th >Sub Total (Days*Price)</th>
-                                        <th>600000</th>
-                                        
-                                      </tr>
-                                      <tr class="right-align">
-                                        <th colspan="6"></th>
-                                        <th >Tax (10%)</th>
-                                        <th>60000</th>
-                                        
-                                      </tr>
-                                      <tr class="right-align">
-                                        <th colspan="6"></th>
-                                        <th  >Discount Code</th>
-                                        <th >GIAM50</th>
-                                        
-                                      </tr>
-                                      <tr class="right-align">
-                                        <th colspan="6"></th>
-                                        <th >Discount Percent</th>
-                                        <th >50%</th>
-                                        
-                                      </tr>
-                                      <tr class="right-align">
-                                        <th colspan="6"></th>
-                                        <th>Total</th>
-                                        <th>330000</th>
-                                        
-                                      </tr>
-                                      
-                                    </tbody>
+                                    @if (roomInfo!==null) {
+                                        <tbody>
+                                            <tr class="right-align">
+                                              <td>{{hotelName}}</td>
+                                              <td>{{roomInfo.roomName}}</td>
+                                              <td>{{checkIn}}</td>
+                                              <td>{{checkOut}}</td>
+                                              <td>{{daysDiff}}</td>
+                                              <td>{{numOfAdult}}</td>
+                                              <td>{{numOfChil}}</td>
+                                              <td>{{roomInfo.roomPrice}}</td>
+                                            </tr>
+                                            <tr class="right-align">
+                                              <th colspan="6"></th>
+                                              <th >Sub Total (Days*Price)</th>
+                                              <th>{{SubTotal}}</th>
+                                              
+                                            </tr>
+                                            <tr class="right-align">
+                                              <th colspan="6"></th>
+                                              <th >Tax (10%)</th>
+                                              <th>{{Tax}}</th>
+                                              
+                                            </tr>
+                                            <tr class="right-align">
+                                              <th colspan="6"></th>
+                                              <th  >Discount Code</th>
+                                              <th >{{discountCode}}</th>
+                                              
+                                            </tr>
+                                            <tr class="right-align">
+                                              <th colspan="6"></th>
+                                              <th >Discount Percent</th>
+                                              <th >{{percent}}%</th>
+                                              
+                                            </tr>
+                                            <tr class="right-align">
+                                              <th colspan="6"></th>
+                                              <th>Total</th>
+                                              <th>{{total}}</th>
+                                              
+                                            </tr>
+                                            
+                                          </tbody>
+                                    }
+                                    
                                   </table>
                             </div>
                         </div>
                     </div>
+                    <button class="default-btn" type="button" (click)="switchTab($event, 'tab2')">Processed CheckOut</button>
                 </div>
+                
                 <div class="row">
-                    <div class="col-lg-4 col-sm-4">
-                        <button class="default-btn" type="button" (click)="switchTab($event, 'tab2')">Checkout </button>
+                    <div class="col-lg-12 col-sm-12">
+                        
+                        
                     </div>
                     
                 </div>
             </div>
             <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
                 <div class="rooms-content">
-                    <h3>tab 2</h3>
-                    <div #paymentRef>
-
-                    </div>
+                    
+                    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
                     <div class="col-lg-4 col-sm-4">
                         <button class="default-btn" type="button" (click)="switchTab($event, 'tab1')">back </button>
                     </div>
@@ -159,7 +174,3 @@
     </div>
 </div>
 
-
-
-  
-<app-subscribe></app-subscribe>
