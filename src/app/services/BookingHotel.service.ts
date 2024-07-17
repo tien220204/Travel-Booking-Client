@@ -9,6 +9,7 @@ import { LoginDTO } from '../DTO/LoginDto.DTO';
 import { RegisterDTO } from '../DTO/registerDTO.dto';
 import { EmailDTO } from '../DTO/EmailDto.DTO';
 import { resetPasswordDTO } from '../DTO/resetPasswordDTO.DTO';
+import { BookingHotelDto } from '../DTO/BookingHotelDto.Dto';
 @Injectable({
     providedIn: 'root',
 })
@@ -49,6 +50,17 @@ export class BookingHotelApiService {
     getPercent(code: string) {
         return lastValueFrom(
             this.httpClient.get<number>(this.baseUrl + 'Discount/getPercent?code=' + code)
+        );
+    }
+
+    async addBill(booking : BookingHotelDto) {
+        const token = localStorage.getItem("token");
+
+        const headers = new HttpHeaders({
+            Authorization: `Bearer ${token}`
+        });
+        return lastValueFrom(
+            this.httpClient.post(this.baseUrl + 'Booking/addBookingHotel/', booking, {headers})
         );
     }
 

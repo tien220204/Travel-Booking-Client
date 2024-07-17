@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { BookingHotelApiService } from '../../../services/BookingHotel.service';
 import { infoDTO } from '../../../DTO/infoDTO.dto';
 import { RoomDto } from '../../../DTO/RoomDto.Dto';
+import { BookingHotelDto } from '../../../DTO/BookingHotelDto.Dto';
 
 
 
@@ -55,11 +56,17 @@ export class BookingPageComponent {
   userInfo : infoDTO | null = null;
   roomInfo : RoomDto | null = null;
   hotelName: string = '';
+
+  booking: BookingHotelDto | null = null;
+
   public payPalConfig?: IPayPalConfig;
 
   ngOnInit(): void {
+    if(!this.checkLogin()){
+      alert('You need to log in before do this action');
+      this.router.navigate(['/login']);
+    }
     
-    // this.initConfig();
     this.route.queryParams.subscribe(params => {
       this.hotelId = params['hotelId'];
       this.roomId = params['roomId'];
@@ -256,8 +263,39 @@ export class BookingPageComponent {
       onApprove: (data, actions) => {
         console.log('onApprove - transaction was approved, but not authorized', data, actions);
         actions.order.get().then((details: any) => {
-          alert("Congratulations, your transaction was successful");
-          this.router.navigate(['/']);
+          
+          if(this.roomInfo!==null){
+            this.booking = {
+              hotelid: this.hotelId,
+              roomid: this.roomId,
+              roomprice: this.roomInfo.roomPrice,
+              checkin: this.checkIn,
+              checkout: this.checkOut,
+              numadult: this.numOfAdult,
+              numchild: this.numOfChil,
+              numday: this.daysDiff,
+              subtotal: this.SubTotal,
+              tax: this.Tax,
+              code: this.discountCode,
+              percent: this.percent,
+              total: this.total
+            };
+           
+              this.bookingHotelApiService.addBill(this.booking).then(
+                (res) => {
+                  console.log(res);
+                  alert("Congratulations, your transaction was successful");
+                  this.router.navigate(['/']);
+                  
+                },
+                err => {
+                  console.log(err);
+                }
+              )
+          
+          }
+          
+          
           console.log('onApprove - you can get full order details inside onApprove: ', details);
         });
       },
