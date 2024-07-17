@@ -1,6 +1,7 @@
 import { hotelResDto } from "./hotelResDTO.dto"
 import { PhotoDto } from "./photoDto.dto"
 import { reviewDto } from "./reviewDto.dto"
+import { RoomDto } from "./RoomDto.Dto"
 
 export interface detailHotelDto {
     hotel : hotelResDto
@@ -8,5 +9,6 @@ export interface detailHotelDto {
     listReview : reviewDto[]
     count : number
     userFullName : string
-    star: number
+    star: number, 
+    rooms: RoomDto[]
 }

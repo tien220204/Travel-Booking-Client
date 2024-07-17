@@ -2,14 +2,14 @@ import { CommonModule, NgClass, NgSwitch } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 import { SubscribeComponent } from '../../../common/@base/subscribe/subscribe.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { detailHotelDto } from '../../../../DTO/hotelDetails.Dto.dto';
 import { HotelApiService } from '../../../../services/HotelApi.service';
 
 @Component({
   selector: 'app-hotel-detail',
   standalone: true,
-  imports: [NgClass, CommonModule, SubscribeComponent],
+  imports: [NgClass, CommonModule, SubscribeComponent, RouterModule ],
   templateUrl: './hotel-detail.component.html',
   styleUrl: './hotel-detail.component.scss',
   host: { 'collision-id': 'HotelDetailComponent' },

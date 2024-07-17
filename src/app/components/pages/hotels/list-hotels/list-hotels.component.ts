@@ -5,6 +5,7 @@ import { SubscribeComponent } from '../../../common/@base/subscribe/subscribe.co
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { HotelApiService } from '../../../../services/HotelApi.service';
 import { listHotelDto } from '../../../../DTO/listHotelDto.dto';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-hotels',
@@ -12,7 +13,7 @@ import { listHotelDto } from '../../../../DTO/listHotelDto.dto';
   imports: [
     SubscribeComponent,
     BookingBarComponent,
-    RouterLink
+    RouterLink, FormsModule
   ],
   templateUrl: './list-hotels.component.html',
   styleUrl: './list-hotels.component.scss'
@@ -23,6 +24,10 @@ export class ListHotelsComponent implements OnInit  {
   totalPages: number = 0;
   totalItems: number = 0;
   listHotelDto : listHotelDto | null = null;
+  
+
+  hotelName: string = '';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -31,15 +36,21 @@ export class ListHotelsComponent implements OnInit  {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.page = params['page'] ? + params['page'] : 1;
-      this.loadHotels();
+      this.hotelName = params['hotelName'] ?  params['hotelName'] : '';
+      
+      this.loadHotels(this.page, this.hotelName);
       console.log("page",this.page);
     });
 
     
   }
 
-  loadHotels() {
-    this.hotelApiService.getPaginedHotel(this.page).then(
+  loadHotels(page: number, hotelName: string) {
+    const queryParams: any = {};
+
+    if (this.page) queryParams.page = this.page;
+    if (this.hotelName) queryParams.hotelName = this.hotelName;
+    this.hotelApiService.getPaginedHotel(queryParams).then(
       (res) => {
         // console.log(res);
         this.listHotelDto = res as listHotelDto;
@@ -53,12 +64,16 @@ export class ListHotelsComponent implements OnInit  {
     )
   }
 
-  onPageChange(newPage: number){
-    console.log(newPage)
+  onPageChange(newPage: number, page: number, hotelName: string){
+    console.log('new page',newPage)
+    const queryParams: any = {};
+    if (this.page) queryParams.page = newPage;
+    if (this.hotelName) queryParams.hotelName = this.hotelName;
+
     if (newPage > 0 && newPage <= this.totalPages) {
       this.page = newPage;
-      this.router.navigate(['/hotels-listing'], { queryParams: { page: this.page } });
-      this.loadHotels();
+      this.router.navigate(['/hotels-listing'], { queryParams });
+      this.loadHotels(page, hotelName);
     }
   }
 
@@ -66,4 +81,11 @@ export class ListHotelsComponent implements OnInit  {
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
 
+  onSubmit(){
+    console.log("ok")
+    const queryParams: any = {};
+    if (this.page) queryParams.page = this.page;
+    if (this.hotelName) queryParams.hotelName = this.hotelName;
+    this.router.navigate(['/hotels-listing'], { queryParams });
+  }
 }

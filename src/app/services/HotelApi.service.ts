@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
 import { lastValueFrom } from 'rxjs';
@@ -12,9 +12,16 @@ import { LoginDTO } from '../DTO/LoginDto.DTO';
 export class HotelApiService {
   httpClient = inject(HttpClient);
   baseUrl = enviroment.baseApiUrl + 'Hotel';
-  async getPaginedHotel(pageNumber : number) {
+  async getPaginedHotel(params: any) {
+    let httpParams = new HttpParams();
+    Object.keys(params).forEach(key => {
+      if (params[key]) {
+        httpParams = httpParams.append(key, params[key]);
+      }
+    });
+    console.log("service",{ params: httpParams });
     return lastValueFrom(
-      this.httpClient.get(this.baseUrl + '/HotelsPaginated?PageNumber='+pageNumber)
+      this.httpClient.get(this.baseUrl + '/HotelsPaginated',{ params: httpParams })
     );
   }
   

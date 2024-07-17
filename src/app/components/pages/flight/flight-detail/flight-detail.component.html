@@ -5,25 +5,27 @@
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="gallery-image">
-                    <img src="assets/images/gallery/gallery-6.jpg" alt="gallery-image">
+                    <img src="https://hnm.1cdn.vn/2023/05/26/hanoimoi.com.vn-uploads-images-tuanluong-2023-05-26-_vna.jpg" alt="gallery-image">
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="row">
                     <div class="col-lg-6 col-sm-6 col-6">
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-7.jpg" alt="gallery-image">
+                            
+                            <img src="https://spirit.vietnamairlines.com/wp-content/uploads/2023/10/01-1.jpg" alt="gallery-image">
                         </div>
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-8.jpg" alt="gallery-image">
+                            <img src="https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng_12/Ng%C3%A0y_14/TRUNG/VNA/anh1.jpg" alt="gallery-image">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-6">
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-9.jpg" alt="gallery-image">
+                            <img src="https://skift.com/wp-content/uploads/2015/06/A350-900_Vietnam_Airlines_roll_out_paintshop_2-e1435673710234.jpg" alt="gallery-image">
                         </div>
                         <div class="gallery-image">
-                            <img src="assets/images/gallery/gallery-10.jpg" alt="gallery-image">
+                            
+                            <img  src="https://etimg.etb2bimg.com/photo/92340393.cms" alt="gallery-image">
                         </div>
                     </div>
                 </div>
@@ -40,358 +42,96 @@
                         Overview
                     </span>
                 </li>
-                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
-                    <span (click)="switchTab($event, 'tab2')">
-                        Amenities
-                    </span>
-                </li>
+                
                 <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
                     <span (click)="switchTab($event, 'tab3')">
                         Policies
                     </span>
                 </li>
-                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab4'}">
-                    <span (click)="switchTab($event, 'tab4')">
-                        Reviews
-                    </span>
-                </li>
+            
             </ul>
             <div class="tabs-container">
-                <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
-                    <div class="overview-content">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="content">
-                                    <h3>New York (NYC), USA</h3>
-                                    <p>Atlanta (ATL) to Brisbane (BNE)</p>
-                                    <p>1 Feb – 5 Feb • 5 days</p>
-                                    <p>Call our travel expert: <a href="tel:+1 719-504-1984">+1 719-504-1984</a></p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="price-content">
-                                    <div class="price"><span>$250</span> (Per person)</div>
-                                    <p>Economy</p>
-                                    <a routerLink="/book-now" class="default-btn">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt.</p>
-                        <p>Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.</p>
-                        <div class="info">
+                @if (flightDetail!==null) {
+                    <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
+                        <div class="overview-content">
                             <div class="row">
-                                <div class="col-xl-8 col-lg-12 col-md-12">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0">
-                                            <img src="assets/images/gallery/blue-atcr.jpg" alt="user">
-                                        </div>
-                                        <div class="flex-grow-1 ms-4 author">
-                                            <h3>Jason Roy</h3>
-                                            <span>Flight manager</span>
-                                            <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed.</p>
-                                        </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="content">
+                                        <h3>{{flightDetail.nameFlight}}</h3>
+                                        <p>({{flightDetail.departureAirportId}}) to  ({{flightDetail.arrivalAirportId}})</p>
+                                        <p>Start Date: {{flightDetail.startDate}}</p>
+                                        
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-12 col-md-12">
-                                    <div class="facilities">
-                                        <h3>Most popular facilities</h3>
-                                        <ul>
-                                            <li>
-                                                <i class="ri-wifi-line"></i>
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <i class="ri-airplay-line"></i>
-                                                Air conditioning
-                                            </li>
-                                            <li>
-                                                <i class="ri-restaurant-2-fill"></i>
-                                                Cable TV service
-                                            </li>
-                                            <li>
-                                                <i class="ri-open-arm-line"></i>
-                                                Free breakfast
-                                            </li>
-                                        </ul>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="price-content">
+                                        <div class="price"><span>{{ flightDetail.flightPrice | number:'1.0-0' }}</span> VND (Per person)</div>
+                                        
+                                        <a routerLink="/book-now" class="default-btn">Book Now</a>
                                     </div>
                                 </div>
                             </div>
+                            <p>  <b>Flight Details</b> <br>
+                                Flight Number: {{flightDetail.flightId}} <br>
+                                Departure Date: {{flightDetail.startDate}} <br>
+                                
+                                Departure Time: {{flightDetail.departureTime}} (local time) <br>
+                                
+                                Departure Airport: {{flightDetail.departureAirportId}} <br>
+                                
+                        
+                               
+                                
+                                Arrival Time: {{flightDetail.arrivalTime}} <br>
+                                
+                                Arrival Airport: {{flightDetail.arrivalAirportId}} <br>
+                                
+                               
+                            <p></p>
+                            
                         </div>
                     </div>
-                </div>
-                <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
-                    <div class="amenities-content">
-                        <h3>Amenities</h3>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-wifi-line"></i> Free WiFi</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-airplay-line"></i> Air conditioning</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-restaurant-2-line"></i> Restaurant</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-walk-fill"></i>Gym</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-hotel-line"></i>Outdoor pool</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-text-spacing"></i> Spa</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-body-scan-line"></i> Guest services</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-barcode-box-line"></i> Bar</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-hotel-line"></i> Room service</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-cup-line"></i> Coffee machine</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-qq-line"></i> Coffee shop</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-wifi-line"></i> Coffee shop</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-group-line"></i>Family friendly</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-wheelchair-line"></i> Accessibility</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-amenities">
-                                    <h4><i class="ri-indent-decrease"></i> More</h4>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
+                
+                
                 <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
                     <div class="policies-content">
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="single-policies">
-                                    <h3>Check-in</h3>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis.</p>
+                                    <h3>Account Registration</h3>
+                                    <p>To access certain features of the Website, you may be required to create an account. You agree to:
+
+                                        Provide accurate, current, and complete information during the registration process.
+                                        Maintain and promptly update your account information to keep it accurate, current, and complete.
+                                        Safeguard your account password and accept responsibility for all activities that occur under your account.</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="single-policies">
-                                    <h3>Check-out</h3>
-                                    <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis.</p>
+                                    <h3>Legal Compliance</h3>
+                                    <p>You agree to comply with all applicable laws, regulations, and these Terms when using the Website. You are solely responsible for any actions taken under your account, including the content you post and your interactions with other users.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="single-policies">
-                            <h3>Special check-in instructions</h3>
-                            <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt</p>
+                            <h3>Privacy Policy</h3>
+                            <p>Your use of the Website is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal information. By using the Website, you consent to the collection and use of your information as described in our Privacy Policy.</p>
                         </div>
                         <div class="single-policies">
-                            <h3>Access methods</h3>
-                            <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt</p>
+                            <h3>Limitation of Liability</h3>
+                            <p>To the maximum extent permitted by applicable law, Karnel Travel shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses arising out of or in connection with your use of the Website or the services provided.</p>
                         </div>
                         <div class="single-policies">
-                            <h3>Children and extra beds</h3>
-                            <ul>
-                                <li>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam</li>
-                                <li>vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget </li>
-                                <li>consectetur sed, convallis at tellus. </li>
-                            </ul>
+                            <h3>Modifications to Terms</h3>
+                            <p>
+                                Karnel Travel reserves the right to modify these Terms at any time. Any changes to the Terms will be posted on this page, and the effective date will be updated. Your continued use of the Website following the posting of changes constitutes your acceptance of such changes.
+                            </p>
                         </div>
-                        <div class="single-policies">
-                            <h3>Cancellation Policy</h3>
-                            <p>Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum   ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt</p>
-                        </div>
+                        
                     </div>
                 </div>
-                <div class="pane" id="tab4" *ngIf="currentTab === 'tab4'">
-                    <div class="reviews-content">
-                        <div class="row">
-                            <div class="col-lg-5 col-md-12">
-                                <div class="review-bar">
-                                    <h3>Reviews</h3>
-                                    <h1>4.8</h1>
-                                    <p>543 reviews</p>
-                                    <ul>
-                                        <li>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="best">Wonderful</span> <span class="persent">70%</span></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="best">Very good</span> <span class="persent">15%</span></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="best">Good</span> <span class="persent">10%</span></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span class="best">Okay</span> <span class="persent">5%</span></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span class="best">Poor</span> <span class="persent">0%</span></div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <form class="review-form">
-                                    <h3>Write a review</h3>
-                                    <div class="star-rating">
-                                        <input id="star-5" type="radio" name="rating" value="star-5" />
-                                        <label for="star-5" title="5 stars">
-                                        <i class="active ri-star-fill" aria-hidden="true"></i>
-                                        </label>
-                                        <input id="star-4" type="radio" name="rating" value="star-4" />
-                                        <label for="star-4" title="4 stars">
-                                        <i class="active ri-star-fill" aria-hidden="true"></i>
-                                        </label>
-                                        <input id="star-3" type="radio" name="rating" value="star-3" />
-                                        <label for="star-3" title="3 stars">
-                                        <i class="active ri-star-fill" aria-hidden="true"></i>
-                                        </label>
-                                        <input id="star-2" type="radio" name="rating" value="star-2" />
-                                        <label for="star-2" title="2 stars">
-                                        <i class="active ri-star-fill" aria-hidden="true"></i>
-                                        </label>
-                                        <input id="star-1" type="radio" name="rating" value="star-1" />
-                                        <label for="star-1" title="1 star">
-                                        <i class="active ri-star-fill" aria-hidden="true"></i>
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Title of your review</label>
-                                        <input type="text" class="form-control" name="review" id="review">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Review text</label>
-                                        <textarea name="message" class="form-control" id="message" rows="6"></textarea>
-                                    </div>
-                                    <button class="default-btn">Submit your review</button>
-                                </form>
-                            </div>
-                            <div class="col-lg-7 col-md-12">
-                                <ul class="review-list">
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Sandra abels</h4>
-                                        <span>Nov 25, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Rebecca collett</h4>
-                                        <span>Nov 24, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Mary johnson</h4>
-                                        <span>Nov 23, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Andrew ragland</h4>
-                                        <span>Nov 22, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                    <li>
-                                        <div class="rating">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </div>
-                                        <h4>Shannon luna</h4>
-                                        <span>Nov 25, 2024</span>
-                                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

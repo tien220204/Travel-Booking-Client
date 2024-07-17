@@ -8,6 +8,9 @@ export interface hotelResDto {
     hotelLocation : string;
     locationId : string;
     isHide : string;
+    countReview : number,
+    totalStar : number,
+    star : number
     facilities : facilitiesDTO[];
     photoUrl : string;
 }
