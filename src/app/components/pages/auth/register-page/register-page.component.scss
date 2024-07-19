@@ -229,4 +229,20 @@
 	  color: #333;
 	  animation: fadeIn 1s ease-in-out;
 	}
+	/* forget-password.component.scss */
+.radio-group {
+	display: flex;
+	justify-content: space-between;
   }
+  
+  .radio-group .form-check {
+	margin-right: 20px; /* Hoặc sử dụng padding để tạo khoảng cách */
+  }
+  
+  .radio-group .form-check input {
+	margin-left: 10px;
+  }
+  
+  }
+
+  
