@@ -1,20 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { TourApiService } from '../../../../services/TourApi.service';
+import { TourDto } from '../../../../DTO/tourDto.Dto';
+import { SubscribeComponent } from '../subscribe/subscribe.component';
+import { BookingBarComponent } from '../booking-bar/booking-bar.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule, DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-destinations',
   standalone: true,
-  imports: [CarouselModule],
+  imports: [CarouselModule, SubscribeComponent,
+    BookingBarComponent,
+    RouterLink, FormsModule, 
+    
+   
+    CommonModule  , 
+   
+    ],
   templateUrl: './destinations.component.html',
   styleUrls: ['./destinations.component.scss'],
   host: { 'collision-id': 'DestinationsComponent' },
+  providers: [DecimalPipe]
 })
 export class DestinationsComponent implements OnInit {
-  constructor(public router: Router) {}
-
-  ngOnInit(): void {}
+  constructor(public router: Router, private tourApiService: TourApiService) {}
+  listTour : TourDto[] | null = null;
+  ngOnInit(): void {this.loadListTour()}
 
   destinationsSlides: OwlOptions = {
     nav: true,
@@ -46,4 +60,18 @@ export class DestinationsComponent implements OnInit {
       },
     },
   };
+  loadListTour(){
+    this.tourApiService.getAllTour().then(
+      (res) => {
+        // console.log(res);
+        this.listTour = res as TourDto[];
+        
+        
+      }, 
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
 }

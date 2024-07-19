@@ -176,37 +176,34 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <form class="review-form">
+                                <form class="review-form" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
                                     <h3>Write a review</h3>
                                     <div class="star-rating">
-                                        <input id="star-5" type="radio" name="rating" value="star-5" />
+                                        <input id="star-5" formControlName="rating" type="radio" name="rating" value="star-5" />
                                         <label for="star-5" title="5 stars">
                                         <i class="active ri-star-fill" aria-hidden="true"></i>
                                         </label>
-                                        <input id="star-4" type="radio" name="rating" value="star-4" />
+                                        <input id="star-4" formControlName="rating" type="radio" name="rating" value="star-4" />
                                         <label for="star-4" title="4 stars">
                                         <i class="active ri-star-fill" aria-hidden="true"></i>
                                         </label>
-                                        <input id="star-3" type="radio" name="rating" value="star-3" />
+                                        <input id="star-3" formControlName="rating" type="radio" name="rating" value="star-3" />
                                         <label for="star-3" title="3 stars">
                                         <i class="active ri-star-fill" aria-hidden="true"></i>
                                         </label>
-                                        <input id="star-2" type="radio" name="rating" value="star-2" />
+                                        <input id="star-2" formControlName="rating" type="radio" name="rating" value="star-2" />
                                         <label for="star-2" title="2 stars">
                                         <i class="active ri-star-fill" aria-hidden="true"></i>
                                         </label>
-                                        <input id="star-1" type="radio" name="rating" value="star-1" />
+                                        <input id="star-1" formControlName="rating" type="radio" name="rating" value="star-1" />
                                         <label for="star-1" title="1 star">
                                         <i class="active ri-star-fill" aria-hidden="true"></i>
                                         </label>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Title of your review</label>
-                                        <input type="text" class="form-control" name="review" id="review">
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label>Review text</label>
-                                        <textarea name="message" class="form-control" id="message" rows="6"></textarea>
+                                        <textarea formControlName="reviewText" name="message" class="form-control" id="message" rows="6"></textarea>
                                     </div>
                                     <button class="default-btn">Submit your review</button>
                                 </form>

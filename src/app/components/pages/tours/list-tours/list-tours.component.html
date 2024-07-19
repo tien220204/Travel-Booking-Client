@@ -1,0 +1,81 @@
+
+<!-- Hotels -->
+<div class="hotels-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <!--Search sidebar -->
+           
+            <!-- -------- -->
+            <!--The hotel result -->
+            <div class="col-lg-12 col-md-12">
+                <div class="hotels-listing">
+                    <ul class="d-flex justify-content-between sorting">
+                        <li>
+                            @if (listTour!=null) {
+                                <span>{{listTour.length}} tours</span>
+                            }@else {
+                                <span>0 tours</span>
+                            }
+                            
+                        </li>
+                        
+                    </ul>
+                    <ul class="hotels-list">
+                        
+                        @if (listTour!=null) {
+                            @for (item of listTour; track $index) {
+                                <li class="single-hotel-box">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-xl-5 col-lg-12 col-sm-12">
+                                            <a routerLink="/tour-details"   [queryParams]="{tourId: item.tourId}" class="d-block">
+                                                <img src="{{item.photoUrl}}" alt="listing-image">
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-6 col-sm-7">
+                                            <div class="content">
+                                                <h3>
+                                                    <a routerLink="/tour-details"   [queryParams]="{tourId: item.tourId}">
+                                                        {{item.tourName}} 
+                                                    </a>
+                                                </h3>
+                                                <p></p>
+                                                
+                                                <p></p>
+                                                <div class="price">{{item.tourPrice | number:'1.0-0'}} VND/Night <span></span></div>
+                                                <a routerLink="/tour-details"  [queryParams]="{tourId: item.tourId}" class="default-btn">Book now</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-sm-5">
+                                            <ul class="info">
+                                                <li>Departure: {{item.departureProvince}}</li>
+                                                <li>Arrival: {{item.arrivalProvince}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        }
+                        
+                    </ul>
+                    <!--
+                        <div class="pagination-area">
+                        <a routerLink="/hotels-listing" class="next page-numbers">
+                            <i class="ri-arrow-left-line"></i>
+                        </a>
+                        <span class="page-numbers current" aria-current="page">1</span>
+                        <a routerLink="/hotels-listing" class="page-numbers">2</a>
+                        <a routerLink="/hotels-listing" class="page-numbers">3</a>
+                        <a routerLink="/hotels-listing" class="next page-numbers">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                        </div>
+                    -->
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-subscribe></app-subscribe>

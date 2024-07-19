@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
 import { lastValueFrom } from 'rxjs';
@@ -6,6 +6,7 @@ import { lastValueFrom } from 'rxjs';
 import { enviroment } from '../Enviroments/Enviroment';
 
 import { LoginDTO } from '../DTO/LoginDto.DTO';
+import { reviewDto } from '../DTO/reviewDto.dto';
 @Injectable({
   providedIn: 'root',
 })
@@ -28,6 +29,17 @@ export class HotelApiService {
   async getHotelDetail(id : string) {
     return lastValueFrom(
       this.httpClient.get(this.baseUrl + '/Hotel-Details/'+id)
+    );
+  }
+
+  async addReview(reviewdto: reviewDto) {
+    const token = localStorage.getItem("token");
+
+        const headers = new HttpHeaders({
+            Authorization: `Bearer ${token}`
+        });
+    return lastValueFrom(
+      this.httpClient.post(enviroment.baseApiUrl + 'Review/addReview/', reviewdto, {headers})
     );
   }
 }

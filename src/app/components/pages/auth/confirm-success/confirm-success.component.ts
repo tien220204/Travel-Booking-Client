@@ -16,6 +16,6 @@ export class ConfirmSuccessComponent {
   }
 
   navigateToLogin() {
-    this.router.navigate(['/login']); // Điều hướng về trang đăng nhập sau khi xác nhận
+    this.router.navigate(['/login']); 
   }
 }

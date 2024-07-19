@@ -6,32 +6,14 @@
                 <div class="book-now-content">
                     <h3>Booking Information</h3>
                     <div class="row">
-                        <div class="col-lg-6 col-sm-6">
+                        
+                        <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
-                                <label>Check In</label>
-                                <dp-date-picker [(ngModel)]="checkIn"  class="form-control" theme="dp-material" placeholder="Date in" [config]="datePickerConfig" required="true"></dp-date-picker>
-                                
-                            </div>
-                            
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
-                                <label>Check Out</label>
-                                <dp-date-picker [(ngModel)]="checkOut" class="form-control" theme="dp-material" placeholder="Date out" [config]="datePickerConfig" required="true"></dp-date-picker>
+                                <label>Number Of Passengers</label>
+                                <input type="number" [(ngModel)]="numOfPass" class="form-control">
                             </div>
                         </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
-                                <label>Number Of Adult</label>
-                                <input type="number" [(ngModel)]="numOfAdult" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
-                                <label>Number Of Children</label>
-                                <input type="number" [(ngModel)]="numOfChil" class="form-control">
-                            </div>
-                        </div>
+                        
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>Discount Code (optional)</label>
@@ -91,31 +73,32 @@
                                 <table class="table table-warning table-bordered" >
                                     <thead>
                                       <tr class="right-align">
-                                        <th scope="col" style="width: 20%;">Hotel Name</th>
-                                        <th scope="col" style="width: 20%;">Room Name</th>
-                                        <th scope="col">Check In</th>
-                                        <th scope="col">Check Out</th>
-                                        <th scope="col">Num of Days</th>
-                                        <th scope="col">Num of Adults</th>
-                                        <th scope="col">Num of Children</th>
-                                        <th scope="col">Room Price</th>
+                                        <th scope="col" style="width: 20%;">Flight Name</th>
+                                        <th scope="col">Departure Airport</th>
+                                        <th scope="col">Arrival Airport</th>
+                                        <th scope="col">Start Date</th>
+                                        <th scope="col">Departure Time</th>
+                                        <th scope="col">Arrival Time</th>
+                                        <th scope="col">Number Of Passengers</th>
+                                        <th scope="col">Flight Price</th>
+                                        
                                       </tr>
                                     </thead>
-                                    @if (roomInfo!==null) {
+                                    @if (flightDTO!==null) {
                                         <tbody>
                                             <tr class="right-align">
-                                              <td>{{hotelName}}</td>
-                                              <td>{{roomInfo.roomName}}</td>
-                                              <td>{{checkIn}}</td>
-                                              <td>{{checkOut}}</td>
-                                              <td>{{daysDiff}}</td>
-                                              <td>{{numOfAdult}}</td>
-                                              <td>{{numOfChil}}</td>
-                                              <td>{{roomInfo.roomPrice | number:'1.0-0'}}</td>
+                                              <td>{{flightDTO.nameFlight}}</td>
+                                              <td>{{flightDTO.departureAirportId}}</td>
+                                              <td>{{flightDTO.arrivalAirportId}}</td>
+                                              <td>{{flightDTO.startDate}}</td>
+                                              <td>{{flightDTO.departureTime}}</td>
+                                              <td>{{flightDTO.arrivalTime}}</td>
+                                              <td>{{numOfPass}}</td>
+                                              <td>{{flightDTO.flightPrice | number:'1.0-0'}}</td>
                                             </tr>
                                             <tr class="right-align">
                                               <th colspan="6"></th>
-                                              <th >Sub Total (Days*Price)</th>
+                                              <th >Sub Total (Passengers*Price)</th>
                                               <th>{{SubTotal | number:'1.0-0'}}</th>
                                               
                                             </tr>
@@ -128,7 +111,7 @@
                                             <tr class="right-align">
                                               <th colspan="6"></th>
                                               <th  >Discount Code</th>
-                                              <th >{{discountCode}}</th>
+                                              <th >{{discountCode | number:'1.0-0'}}</th>
                                               
                                             </tr>
                                             <tr class="right-align">

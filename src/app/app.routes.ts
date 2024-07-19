@@ -20,6 +20,11 @@ import { ConfirmSuccessComponent } from './components/pages/auth/confirm-success
 import { ForgetPasswordComponent } from './components/pages/auth/forget-password/forget-password.component';
 
 import { ActiveComponent } from './components/common/@base/active-account/active.component';
+import { BookingFlightComponent } from './components/pages/booking-flight/booking-flight.component';
+import { ListToursComponent } from './components/pages/tours/list-tours/list-tours.component';
+import { TourDetailComponent } from './components/pages/tours/tour-detail/tour-detail.component';
+import { BookingTourComponent } from './components/pages/booking-tour/booking-tour.component';
+import { ListBookingComponent } from './components/pages/mybooking/booking-list/list-booking.component';
 
 
 
@@ -48,7 +53,16 @@ export const routes: Routes = [
   // chua co id o route
   {path:'hotel-details', component: HotelDetailComponent},
   {path:'flight-details', component: FlightDetailComponent},
-
+  //booking flight
+  {path:'booking-flight', component: BookingFlightComponent},
   { path: 'Verify-Your-Account/:securityCode', component: ActiveComponent },
-  
+ 
+
+  //tour
+  {path:'tour-listing', component: ListToursComponent},
+  {path:'tour-details', component: TourDetailComponent},
+  {path:'booking-tour', component: BookingTourComponent},
+
+  //list
+  {path:'my-booking', component: ListBookingComponent},
 ];
