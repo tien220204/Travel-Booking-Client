@@ -26,7 +26,7 @@ export class ForgetPasswordComponent {
   ){}
   ngOnInit(): void {
     this.emailForm = this.formBuilder.group({
-      email: 'phamtienorion@gmail.com'
+      email: ''
     });
   }
   emailCheck() {

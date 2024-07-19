@@ -1,96 +1,35 @@
 <div class="destinations-area pt-100 pb-75">
   <div class="container">
     <div class="section-title">
-      <h2>Top destinations</h2>
+      <h2>Top Tour</h2>
       <p>Book the best for your next destination</p>
     </div>
     <div class="destinations-slides">
       <owl-carousel-o [options]="destinationsSlides">
-        <ng-template carouselSlide>
-          <div class="single-destinations-item">
-            <div class="image">
-              <a routerLink="/hotel-details">
-                <img
-                  src="assets/images/destinations/destination1.jpg"
-                  alt="Image"
-                />
-              </a>
-              <span>New York</span>
-            </div>
-            <div class="content">
-              <span class="date">Jan 01 - Jan 07, 4 people</span>
-              <p>Starting from <span>$1500</span></p>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="single-destinations-item">
-            <div class="image">
-              <a routerLink="/hotel-details">
-                <img
-                  src="assets/images/destinations/destination2.jpg"
-                  alt="Image"
-                />
-              </a>
-              <span>Orlando</span>
-            </div>
-            <div class="content">
-              <span class="date">Jan 27 - Jan 31, 4 people</span>
-              <p>Starting from <span>$1000</span></p>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="single-destinations-item">
-            <div class="image">
-              <a routerLink="/hotel-details">
-                <img
-                  src="assets/images/destinations/destination3.jpg"
-                  alt="Image"
-                />
-              </a>
-              <span>Chicago</span>
-            </div>
-            <div class="content">
-              <span class="date">Feb 05 - Feb 09, 4 people</span>
-              <p>Starting from <span>$1200</span></p>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="single-destinations-item">
-            <div class="image">
-              <a routerLink="/hotel-details">
-                <img
-                  src="assets/images/destinations/destination4.jpg"
-                  alt="Image"
-                />
-              </a>
-              <span>Atlanta</span>
-            </div>
-            <div class="content">
-              <span class="date">Feb 27 - Mar 04, 4 people</span>
-              <p>Starting from <span>$1400</span></p>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="single-destinations-item">
-            <div class="image">
-              <a routerLink="/hotel-details">
-                <img
-                  src="assets/images/destinations/destination5.jpg"
-                  alt="Image"
-                />
-              </a>
-              <span>Spain</span>
-            </div>
-            <div class="content">
-              <span class="date">Jan 01 - Jan 07, 4 people</span>
-              <p>Starting from <span>$1500</span></p>
-            </div>
-          </div>
-        </ng-template>
+        @if(listTour!==null){
+          @for (item of listTour; track $index) {
+            <ng-template carouselSlide>
+              <div class="single-destinations-item">
+                <div class="image">
+                  <a routerLink="/tour-details"   [queryParams]="{tourId: item.tourId}">
+                    <img
+                      src="{{item.photoUrl}}"
+                      alt="Image"
+                    />
+                  </a>
+                  <span>{{item.tourName}}</span>
+                </div>
+                <div class="content">
+                  <span class="date"></span>
+                  <p>Starting from <span>{{item.tourPrice | number:'1.0-0'}} VND</span></p>
+                </div>
+              </div>
+            </ng-template>
+          }
+          
+        }
+        
+        
       </owl-carousel-o>
     </div>
   </div>

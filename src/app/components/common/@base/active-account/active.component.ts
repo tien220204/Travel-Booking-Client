@@ -50,10 +50,10 @@ export class ActiveComponent implements OnInit {
   }
   register(){
     this.route.paramMap.subscribe(params => {
-      this.token = params.get('token')!;
+      this.token = params.get('securityCode')!;
       console.log('Token from URL:', this.token);
 
-      //code dang loi
+      
       this.accountAPIService.activeAccount(this.token).then(
         (res) => {
           let result: JsonResponseDTO = res as JsonResponseDTO;
